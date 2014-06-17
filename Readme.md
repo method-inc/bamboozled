@@ -1,6 +1,6 @@
 # Bamboozled
 
-[![Gem Version](https://badge.fury.io/rb/bamboozled.svg)](http://badge.fury.io/rb/bamboozled) [![Code Climate](https://codeclimate.com/github/Skookum/bamboozled.png)](https://codeclimate.com/github/Skookum/bamboozled)
+[![Gem Version](https://badge.fury.io/rb/bamboozled.svg)](http://badge.fury.io/rb/bamboozled) [![Code Climate](https://codeclimate.com/github/Skookum/bamboozled.png)](https://codeclimate.com/github/Skookum/bamboozled) [![Build Status](https://travis-ci.org/Skookum/bamboozled.svg?branch=master)](https://travis-ci.org/Skookum/bamboozled)
 
 Bamboozled wraps the BambooHR API without the use of Rails dependencies. Currently, this gem is **READ-ONLY**.
 
