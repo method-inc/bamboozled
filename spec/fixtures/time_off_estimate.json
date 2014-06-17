@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+date: Tue, 17 Jun 2014 19:25:35 UTC
+
+{
+  "estimates": {
+    "end": "2014-08-31",
+    "estimate": [
+      {
+        "timeOffType" : "64",
+        "name" : "Conference Time Off",
+        "units" : "days",
+        "balance" : "5.0"
+      },
+      {
+        "timeOffType" : "65",
+        "name" : "PTO-Standard",
+        "units" : "hours",
+        "balance" : "85.0"
+      }
+    ]
+  }
+}

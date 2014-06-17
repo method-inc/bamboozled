@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+date: Tue, 17 Jun 2014 19:25:35 UTC
+
+{
+  "id":123,
+  "firstName":"John",
+  "lastName":"Doe"
+}

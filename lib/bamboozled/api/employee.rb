@@ -7,7 +7,7 @@ module Bamboozled
         fields = fields.join(',') if fields.is_a?(Array)
 
         response = request(:get, "employees/directory?fields=#{fields}")
-        response['employees']
+        Array(response['employees'])
       end
 
       def find(id, fields = nil)

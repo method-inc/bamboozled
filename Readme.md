@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/bamboozled.svg)](http://badge.fury.io/rb/bamboozled) [![Code Climate](https://codeclimate.com/github/Skookum/bamboozled.png)](https://codeclimate.com/github/Skookum/bamboozled)
 
-Bamboozled wraps the BambooHR API without the use of Rails dependencies.
+Bamboozled wraps the BambooHR API without the use of Rails dependencies. Currently, this gem is **READ-ONLY**.
 
 # Usage:
 
@@ -58,9 +58,10 @@ client.report.find(report_number, format = 'JSON', fd = true)
 ## Todo:
 
 1. Write tests!
-2. Implement photos endpoints
-3. Implement metadata endpoints
-4. Implement last change information endpoints
+2. Implement CRUD so the gem is not read-only any more.
+2. Implement photos endpoints.
+3. Implement metadata endpoints.
+4. Implement last change information endpoints.
 
 ## Contributing
 

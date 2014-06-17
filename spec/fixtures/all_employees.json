@@ -1,0 +1,58 @@
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+date: Tue, 17 Jun 2014 19:25:35 UTC
+
+{
+  "fields": [
+    {
+      "id": "displayName",
+      "type": "text",
+      "name": "Display Name"
+    },
+    {
+      "id": "firstName",
+      "type": "text",
+      "name": "First Name"
+    },
+    {
+      "id": "lastName",
+      "type": "text",
+      "name": "Last Name"
+    },
+    {
+      "id": "jobTitle",
+      "type": "list",
+      "name": "Job Title"
+    },
+    {
+      "id": "workPhone",
+      "type": "text",
+      "name": "Work Phone"
+    },
+    {
+      "id": "workPhoneExtension",
+      "type": "text",
+      "name": "Work Extension"
+    }
+  ],
+  "employees": [
+    {
+      "id":123,
+      "displayName":"John Doe",
+      "firstName":"John",
+      "lastName":"Doe",
+      "jobTitle":"Customer Service Representative",
+      "workPhone":"555-555-5555",
+      "workPhoneExtension":null
+    },
+    {
+      "id":124,
+      "displayName":"John Doe",
+      "firstName":"John",
+      "lastName":"Doe",
+      "jobTitle":"Customer Service Representative",
+      "workPhone":"555-555-5555",
+      "workPhoneExtension":null
+    }
+  ]
+}

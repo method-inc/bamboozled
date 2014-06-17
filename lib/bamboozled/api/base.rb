@@ -34,7 +34,7 @@ module Bamboozled
           case response.code
           when 200..201
             begin
-              JSON.load(response, nil)
+              JSON.parse(response)
             rescue
               MultiXml.parse(response, symbolize_keys: true)
             end
