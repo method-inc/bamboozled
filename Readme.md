@@ -1,7 +1,7 @@
 # Bamboozled
-## A Ruby Wrapper for the BambooHR API http://www.bamboohr.com
+A Ruby Wrapper for the BambooHR API http://www.bamboohr.com
 
-[![Gem Version](https://badge.fury.io/rb/bamboozled.svg)](http://badge.fury.io/rb/bamboozled)
+[![Gem Version](https://badge.fury.io/rb/bamboozled.svg)](http://badge.fury.io/rb/bamboozled) [![Code Climate](https://codeclimate.com/github/Skookum/bamboozled.png)](https://codeclimate.com/github/Skookum/bamboozled)
 
 Bamboozled wraps the BambooHR API without the use of Rails dependencies.
 
