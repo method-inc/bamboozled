@@ -8,7 +8,7 @@ Bamboozled wraps the BambooHR API without the use of Rails dependencies. Current
 
 ```ruby
 # Create the client:
-client = Bamboozled.client('your_subdomain', 'your_api_key')
+client = Bamboozled.client(subdomain: 'your_subdomain', api_key: 'your_api_key')
 ```
 
 ### Employee related data:
