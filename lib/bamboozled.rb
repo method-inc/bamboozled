@@ -8,7 +8,7 @@ require 'bamboozled/version'
 require 'bamboozled/errors'
 require 'bamboozled/base'
 
-%w(base employee report time_off).each {|a| require "bamboozled/api/#{a}"}
+%w(base employee report time_off meta).each {|a| require "bamboozled/api/#{a}"}
 
 module Bamboozled
   class << self

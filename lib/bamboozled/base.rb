@@ -14,6 +14,10 @@ module Bamboozled
       @report ||= Bamboozled::API::Report.new(@subdomain, @api_key)
     end
 
+    def meta
+      @meta ||= Bamboozled::API::Meta.new(@subdomain, @api_key)
+    end
+
     def time_off
       @time_off ||= Bamboozled::API::TimeOff.new(@subdomain, @api_key)
     end
