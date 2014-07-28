@@ -13,10 +13,15 @@ client = Bamboozled.client(subdomain: 'your_subdomain', api_key: 'your_api_key')
 
 ### Employee related data:
 
+You can pass an array of fields to `all` or `:all` to get all fields your user is allowed to access. Because BambooHR's API doesn't allow for specifying fields on the `/employees/directory` API endpoint, passing a list of fields to retrieve will be signifigantly slower than getting just the default fields since the gem will get the directory of employees, then request the data for each individual employee resulting in `employees.count + 1` API calls.
+
 ```ruby
 # Returns an array of all employees
-client.employee.all
-
+client.employee.all # Gets all employees with default fields
+client.employee.all(:all) # Gets all fields for all employees
+client.employee.all(['hireDate', 'displayName'])
+client.employee.all('hireDate,displayName')
+```
 # Returns a hash of a single employee
 client.employee.find(employee_id, fields = nil)
 

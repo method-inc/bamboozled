@@ -3,15 +3,21 @@ module Bamboozled
     class Employee < Base
 
       def all(fields = nil)
-        fields = all_fields if fields.nil?
-        fields = fields.join(',') if fields.is_a?(Array)
+        response = request(:get, "employees/directory")
 
-        response = request(:get, "employees/directory?fields=#{fields}")
-        Array(response['employees'])
+        if fields.nil? || fields == :default
+          Array(response['employees'])
+        else
+          employees = []
+          response['employees'].map{|e| e['id']}.each do |id|
+            employees << find(id, fields)
+          end
+          employees
+        end
       end
 
       def find(id, fields = nil)
-        fields = all_fields if fields.nil?
+        fields = all_fields if fields == :all
         fields = fields.join(',') if fields.is_a?(Array)
 
         request(:get, "employees/#{id}?fields=#{fields}")
@@ -27,10 +33,6 @@ module Bamboozled
       def time_off_estimate(id, end_date)
         end_date = end_date.strftime("%F") unless end_date.is_a?(String)
         request(:get, "employees/#{id}/time_off/calculator?end=#{end_date}")
-      end
-
-      def default_fields
-        %w(displayName firstName lastName jobTitle workPhone mobilePhone workEmail department location photoUploaded photoUrl canUploadPhoto).join(',')
       end
 
       def all_fields

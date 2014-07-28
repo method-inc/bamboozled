@@ -16,7 +16,6 @@ module Bamboozled
     end
   end
 
-  # 400
   class BadRequest < HTTPError; end #400
   class Unauthorized < HTTPError ; end #
   class Forbidden < HTTPError ; end # 403
