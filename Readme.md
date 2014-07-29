@@ -60,6 +60,20 @@ client.time_off.whos_out(Time.now, '2014-12-31')
 client.report.find(report_number, format = 'JSON', fd = true)
 ```
 
+# Metadata
+
+```ruby
+# Get fields
+client.meta.fields
+# Get lists
+client.meta.lists
+# Get tables
+client.meta.tables
+# Get users
+# Note: this is all uses in the system, whereas client.employee.all only gets active employees
+client.meta.users
+```
+
 ## Todo:
 
 1. Write tests!
