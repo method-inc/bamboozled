@@ -38,6 +38,22 @@ module Bamboozled
       def all_fields
         %w(address1 address2 age bestEmail birthday city country dateOfBirth department division eeo employeeNumber employmentHistoryStatus ethnicity exempt firstName flsaCode fullName1 fullName2 fullName3 fullName4 fullName5 displayName gender hireDate homeEmail homePhone id jobTitle lastChanged lastName location maritalStatus middleName mobilePhone nickname payChangeReason payGroup payGroupId payRate payRateEffectiveDate payType ssn sin state stateCode status supervisor supervisorId supervisorEId terminationDate workEmail workPhone workPhonePlusExtension workPhoneExtension zipcode photoUploaded rehireDate standardHoursPerWeek bonusDate bonusAmount bonusReason bonusComment commissionDate commisionDate commissionAmount commissionComment).join(',')
       end
+
+      def photo_binary(employee_id)
+        request(:get, "employees/#{employee_id}/photo/small")
+      end
+
+      def photo_url(employee)
+        if (Float(employee) rescue false)
+          e = find(employee, ['workEmail', 'homeEmail'])
+          employee = e['workEmail'].nil? ? e['homeEmail'] : e['workEmail']
+        end
+
+        digest = Digest::MD5.new
+        digest.update(employee.strip.downcase)
+        "http://#{@subdomain}.bamboohr.com/employees/photos/?h=#{digest}"
+      end
+
     end
   end
 end

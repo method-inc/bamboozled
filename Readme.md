@@ -34,6 +34,11 @@ client.employee.contacts(employee_id)
 
 # Time off estimate for employee. Requires end date in Date or Time format or YY-MM-DD string.
 client.employee.time_off_estimate(employee_id, end_date)
+
+# Photos for an employee
+client.employee.photo_url(employee_work_email)
+client.employee.photo_url(employee_id)
+client.employee.photo_binary(employee_id)
 ```
 
 ### Time off data
@@ -78,7 +83,7 @@ client.meta.users
 
 1. Write more tests!
 2. Implement CRUD so the gem is not read-only any more.
-2. Implement photos endpoints.
+2. ~~Implement photos endpoints.~~
 3. ~~Implement metadata endpoints.~~
 4. Implement last change information endpoints.
 

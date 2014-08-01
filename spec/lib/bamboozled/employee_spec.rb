@@ -67,4 +67,41 @@ describe "Employees" do
     estimate['estimates']['estimate'].first.keys.must_equal ['timeOffType', 'name', 'units', 'balance']
   end
 
+  it 'returns binary data for an employee email' do
+
+  end
+
+  it 'returns the proper url using employee email address' do
+
+    hashed = '4fdce145bab6d27d69e34403f99fd11c' # Hash of me@here.com
+    required_url = "http://x.bamboohr.com/employees/photos/?h=#{hashed}"
+
+    # Normal
+    url = @client.employee.photo_url('me@here.com')
+    url.must_equal required_url
+
+    # Email with spaces
+    url = @client.employee.photo_url(' me@here.com ')
+    url.must_equal required_url
+
+    # Uppercase emails
+    url = @client.employee.photo_url('ME@HERE.COM')
+    url.must_equal required_url
+  end
+
+  it 'returns the proper url using employee id' do
+    response = File.new('spec/fixtures/employee_emails.json')
+    stub_request(:any, /.*api\.bamboohr\.com.*/).to_return(response)
+
+    hashed = '4fdce145bab6d27d69e34403f99fd11c'
+    required_url = "http://x.bamboohr.com/employees/photos/?h=#{hashed}"
+
+    url = @client.employee.photo_url(123)
+    url.must_equal required_url
+  end
+
+  # TODO - Figure out how to test this with webmock
+  # it 'returns binary data for an employee photo' do
+  # end
+
 end
