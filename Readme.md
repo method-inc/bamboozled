@@ -21,7 +21,7 @@ client.employee.all # Gets all employees with default fields
 client.employee.all(:all) # Gets all fields for all employees
 client.employee.all(['hireDate', 'displayName'])
 client.employee.all('hireDate,displayName')
-```
+
 # Returns a hash of a single employee
 client.employee.find(employee_id, fields = nil)
 
@@ -76,10 +76,10 @@ client.meta.users
 
 ## Todo:
 
-1. Write tests!
+1. Write more tests!
 2. Implement CRUD so the gem is not read-only any more.
 2. Implement photos endpoints.
-3. Implement metadata endpoints.
+3. ~~Implement metadata endpoints.~~
 4. Implement last change information endpoints.
 
 ## Contributing
