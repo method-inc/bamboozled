@@ -16,11 +16,11 @@ module Bamboozled
         end
       end
 
-      def find(id, fields = nil)
+      def find(employee_id, fields = nil)
         fields = all_fields if fields == :all
         fields = fields.join(',') if fields.is_a?(Array)
 
-        request(:get, "employees/#{id}?fields=#{fields}")
+        request(:get, "employees/#{employee_id}?fields=#{fields}")
       end
 
       # Tabular data
@@ -30,9 +30,9 @@ module Bamboozled
         end
       end
 
-      def time_off_estimate(id, end_date)
+      def time_off_estimate(employee_id, end_date)
         end_date = end_date.strftime("%F") unless end_date.is_a?(String)
-        request(:get, "employees/#{id}/time_off/calculator?end=#{end_date}")
+        request(:get, "employees/#{employee_id}/time_off/calculator?end=#{end_date}")
       end
 
       def all_fields
