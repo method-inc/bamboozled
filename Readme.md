@@ -6,6 +6,8 @@ Bamboozled wraps the BambooHR API without the use of Rails dependencies. Current
 
 # Usage:
 
+Install the gem with `gem install bamboozled` or add this to your `Gemfile`: `gem 'bamboozled'`
+
 ```ruby
 # Create the client:
 client = Bamboozled.client(subdomain: 'your_subdomain', api_key: 'your_api_key')
