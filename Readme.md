@@ -13,6 +13,8 @@ Install the gem with `gem install bamboozled` or add this to your `Gemfile`: `ge
 client = Bamboozled.client(subdomain: 'your_subdomain', api_key: 'your_api_key')
 ```
 
+> TIP! Create an API key by logging into your BambooHR account, then click your image in the upper right corner and select "API Keys". Then click "Add A New Key".
+
 ### Employee related data:
 
 You can pass an array of fields to `all` or `:all` to get all fields your user is allowed to access. Because BambooHR's API doesn't allow for specifying fields on the `/employees/directory` API endpoint, passing a list of fields to retrieve will be signifigantly slower than getting just the default fields since the gem will get the directory of employees, then request the data for each individual employee resulting in `employees.count + 1` API calls.
