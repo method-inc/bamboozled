@@ -96,3 +96,6 @@ client.meta.users
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create new Pull Request
 
+## License
+
+MIT. See the [LICENSE](/LICENSE) file.
