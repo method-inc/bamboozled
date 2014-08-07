@@ -6,10 +6,14 @@ Bamboozled wraps the BambooHR API without the use of Rails dependencies. Current
 
 # Usage:
 
+Install the gem with `gem install bamboozled` or add this to your `Gemfile`: `gem 'bamboozled'`
+
 ```ruby
 # Create the client:
 client = Bamboozled.client(subdomain: 'your_subdomain', api_key: 'your_api_key')
 ```
+
+> TIP! Create an API key by logging into your BambooHR account, then click your image in the upper right corner and select "API Keys". Then click "Add A New Key".
 
 ### Employee related data:
 
@@ -96,3 +100,6 @@ client.meta.users
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create new Pull Request
 
+## License
+
+MIT. See the [LICENSE](/LICENSE) file.
