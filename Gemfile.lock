@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bamboozled (0.0.4)
+    bamboozled (0.0.5)
       httparty
       json
 
