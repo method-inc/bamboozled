@@ -8,7 +8,7 @@ module Bamboozled
 
     def authenticate(company, user, password)
       @subdomain = company
-      request(:post, "login?applicationKey=#{@app_key}&user=#{user}&password=#{password}")
+      request(:post, "login", {:body => "applicationKey=#{@app_key}&user=#{CGI.escape(user)}&password=#{CGI.escape(password)}"})
     end
 
     protected
