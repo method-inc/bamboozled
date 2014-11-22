@@ -11,6 +11,8 @@ module Bamboozled
 
       protected
         def request(method, path, options = {})
+          options[:tabular] ||= false
+          tabular = options.delete(:tabular)
           params = {
             path:    path,
             options: options,
@@ -33,10 +35,18 @@ module Bamboozled
 
           case response.code
           when 200..201
-            begin
-              JSON.parse(response)
-            rescue
-              MultiXml.parse(response, symbolize_keys: true)
+            if tabular == true
+              begin
+                response
+              rescue
+                MultiXml.parse(response, symbolize_keys: true)
+              end
+            else
+              begin
+                JSON.parse(response)
+              rescue
+                MultiXml.parse(response, symbolize_keys: true)
+              end
             end
           when 400
             raise Bamboozled::BadRequest.new(response, params, 'The request was invalid or could not be understood by the server. Resubmitting the request will likely result in the same error.')
