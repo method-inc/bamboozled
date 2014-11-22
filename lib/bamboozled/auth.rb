@@ -2,13 +2,13 @@ module Bamboozled
   class Auth
     attr_reader :request
 
-    def initialize(app_key: nil)
-      @app_key
+    def initialize(application_key)
+      @app_key = application_key
     end
 
-    def authenticate(subdomain, user, password)
-      @subdomain = subdomain
-      request(:post, "login?applicationKey=#{@app_key}&user=#{user}&password=#{password}")
+    def authenticate(company, user, password)
+      @subdomain = company
+      request(:post, "login", {:body => "applicationKey=#{@app_key}&user=#{user}&password=#{password}"})
     end
 
     protected

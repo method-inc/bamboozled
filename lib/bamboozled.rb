@@ -19,8 +19,8 @@ module Bamboozled
     end
 
     # Creates an auth client that will raise all errors it encounters
-    def auth(app_key: nil)
-      Bamboozled::Auth.new(app_key: app_key)
+    def auth(app_key)
+      Bamboozled::Auth.new(app_key)
     end
   end
 end
