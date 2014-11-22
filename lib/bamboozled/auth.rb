@@ -7,6 +7,7 @@ module Bamboozled
     end
 
     def authenticate(subdomain, user, password)
+      @subdomain = subdomain
       request(:get, "login", {:body => "applicationKey=#{@app_key}&user=#{user}&password=#{password}"})
     end
 
@@ -62,7 +63,7 @@ module Bamboozled
       end
 
       def path_prefix
-        "https://api.bamboohr.com/api/gateway.php/#{subdomain}/v1/"
+        "https://api.bamboohr.com/api/gateway.php/#{@subdomain}/v1/"
       end
   end
 end
