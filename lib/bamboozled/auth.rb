@@ -6,8 +6,8 @@ module Bamboozled
       @app_key
     end
 
-    def authenticate(subdomain, username, password)
-      request(:get, "login", {:body => "applicationKey=#{@app}"})
+    def authenticate(subdomain, user, password)
+      request(:get, "login", {:body => "applicationKey=#{@app_key}&user=#{user}&password=#{password}"})
     end
 
     protected
