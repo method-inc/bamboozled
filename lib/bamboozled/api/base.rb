@@ -1,4 +1,5 @@
 require 'json'
+require 'active_support/core_ext/hash/indifferent_access'
 
 module Bamboozled
   module API
@@ -34,7 +35,7 @@ module Bamboozled
           case response.code
           when 200..201
             begin
-              JSON.parse(response)
+              JSON.parse(response).with_indifferent_access
             rescue
               MultiXml.parse(response, symbolize_keys: true)
             end
