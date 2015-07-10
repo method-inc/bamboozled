@@ -30,6 +30,17 @@ module Bamboozled
         end
       end
 
+      def new(employee_details:)
+        details = employee_details.map { |k,v| "<field id='#{k}'>#{v}</field>" }
+        details.unshift("<employee>")
+        details.push("</employee>")
+        details = details.join("")
+
+        options = {body: details}
+
+        request(:post, "employees/", options)
+      end
+
       def time_off_estimate(employee_id, end_date)
         end_date = end_date.strftime("%F") unless end_date.is_a?(String)
         request(:get, "employees/#{employee_id}/time_off/calculator?end=#{end_date}")
