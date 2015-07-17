@@ -30,12 +30,13 @@ module Bamboozled
           }
 
           response = HTTParty.send(method, "#{path_prefix}#{path}", httparty_options)
+          binding.pry
           params[:response] = response.inspect.to_s
 
           case response.code
           when 200..201
             begin
-              JSON.parse(response).with_indifferent_access
+              JSON.parse(response.body).with_indifferent_access
             rescue
               MultiXml.parse(response, symbolize_keys: true)
             end
