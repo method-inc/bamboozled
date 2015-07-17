@@ -23,7 +23,7 @@ describe "Employees" do
     employee = @client.employee.find(1234)
 
     employee.is_a?(Hash).must_equal true
-    employee.count.must_equal 3
+    employee.count.must_equal 4
     employee['firstName'].must_equal "John"
     employee['lastName'].must_equal "Doe"
   end
