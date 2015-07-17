@@ -100,6 +100,35 @@ describe "Employees" do
     url.must_equal required_url
   end
 
+  it 'creates a new employee in BambooHR' do
+    details = {
+      firstName: "Bruce",
+      lastName: "Wayne",
+      workEmail: "bruce.wayne@gmail.com",
+      jobTitle: "Batman",
+      city: "Gotham"
+    }
+
+    xml_string = <<-XML.gsub(/^\s+/, '').gsub("\n", '')
+    <employee><field id='firstName'>Bruce</field>
+    <field id='lastName'>Wayne</field>
+    <field id='workEmail'>bruce.wayne@gmail.com</field>
+    <field id='jobTitle'>Batman</field>
+    <field id='city'>Gotham</field>
+    </employee>
+    XML
+
+    response = File.new('spec/fixtures/add_employee.json')
+
+    stub_request(:post, /.*api\.bamboohr\.com.*/).
+      with(body: xml_string).to_return(response)
+
+    employee = @client.employee.add(employee_details: details)
+
+    employee["headers"]["location"].
+      must_equal ["https://api.bamboohr.com/api/gateway.php/alphasights/v1/employees/44259"]
+  end
+
   # TODO - Figure out how to test this with webmock
   # it 'returns binary data for an employee photo' do
   # end
