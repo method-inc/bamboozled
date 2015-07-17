@@ -64,10 +64,11 @@ module Bamboozled
       private
 
       def generate_xml(employee_details)
-        details = employee_details.map { |k,v| "<field id='#{k}'>#{v}</field>" }
-        details.unshift("<employee>")
-        details.push("</employee>")
-        details = details.join("")
+        "".tap do |xml|
+          xml << "<employee>"
+          employee_details.each { |k, v| xml << "<field id='#{k}'>#{v}</field>" }
+          xml << "</employee>"
+        end
       end
     end
   end
