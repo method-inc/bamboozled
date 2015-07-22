@@ -35,10 +35,11 @@ module Bamboozled
           case response.code
           when 200..201
             begin
-              res = JSON.parse(response.body).with_indifferent_access
-              headers = response.headers.to_h
-              res[:headers] = headers
-              res
+              if response.nil?
+                {"headers" => response.headers}.with_indifferent_access
+              else
+                JSON.parse(response.body).with_indifferent_access
+              end
             rescue
               MultiXml.parse(response, symbolize_keys: true)
             end

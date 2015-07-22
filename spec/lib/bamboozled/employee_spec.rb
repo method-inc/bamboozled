@@ -23,7 +23,7 @@ describe "Employees" do
     employee = @client.employee.find(1234)
 
     employee.is_a?(Hash).must_equal true
-    employee.count.must_equal 4
+    employee.count.must_equal 3
     employee['firstName'].must_equal "John"
     employee['lastName'].must_equal "Doe"
   end
@@ -118,15 +118,15 @@ describe "Employees" do
     </employee>
     XML
 
-    response = File.new('spec/fixtures/add_employee.json')
+    headers = {"content-type"=>["application/json; charset=utf-8"], "date"=>["Tue, 17 Jun 2014 19:25:35 UTC"], "location"=>["https://api.bamboohr.com/api/gateway.php/alphasights/v1/employees/44259"]}
 
     stub_request(:post, /.*api\.bamboohr\.com.*/).
-      with(body: xml_string).to_return(response)
+      with(body: xml_string).to_return(body: "", headers: headers)
 
     employee = @client.employee.add(employee_details: details)
 
     employee["headers"]["location"].
-      must_equal ["https://api.bamboohr.com/api/gateway.php/alphasights/v1/employees/44259"]
+      must_equal "https://api.bamboohr.com/api/gateway.php/alphasights/v1/employees/44259"
   end
 
   # TODO - Figure out how to test this with webmock
