@@ -100,33 +100,21 @@ describe "Employees" do
     url.must_equal required_url
   end
 
-  it 'creates a new employee in BambooHR' do
-    details = {
-      firstName: "Bruce",
-      lastName: "Wayne",
-      workEmail: "bruce.wayne@gmail.com",
-      jobTitle: "Batman",
-      city: "Gotham"
-    }
+  describe "#add" do
+    it 'creates a new employee in BambooHR' do
 
-    xml_string = <<-XML.gsub(/^\s+/, '').gsub("\n", '')
-    <employee><field id='firstName'>Bruce</field>
-    <field id='lastName'>Wayne</field>
-    <field id='workEmail'>bruce.wayne@gmail.com</field>
-    <field id='jobTitle'>Batman</field>
-    <field id='city'>Gotham</field>
-    </employee>
-    XML
+      xml = YAML.load_file('spec/fixtures/add_employee_xml.yml')
+      response = File.new('spec/fixtures/add_employee_response.json')
+      details = JSON.parse(File.read('spec/fixtures/add_employee_details.json'))
 
-    headers = {"content-type"=>["application/json; charset=utf-8"], "date"=>["Tue, 17 Jun 2014 19:25:35 UTC"], "location"=>["https://api.bamboohr.com/api/gateway.php/alphasights/v1/employees/44259"]}
+      stub_request(:post, /.*api\.bamboohr\.com.*/).
+        with(xml).to_return(response)
 
-    stub_request(:post, /.*api\.bamboohr\.com.*/).
-      with(body: xml_string).to_return(body: "", headers: headers)
+      employee = @client.employee.add(employee_details: details)
 
-    employee = @client.employee.add(employee_details: details)
-
-    employee["headers"]["location"].
-      must_equal "https://api.bamboohr.com/api/gateway.php/alphasights/v1/employees/44259"
+      employee["headers"]["location"].
+        must_equal "https://api.bamboohr.com/api/gateway.php/alphasights/v1/employees/44259"
+    end
   end
 
   # TODO - Figure out how to test this with webmock
@@ -134,3 +122,4 @@ describe "Employees" do
   # end
 
 end
+
