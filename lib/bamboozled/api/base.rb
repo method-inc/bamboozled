@@ -35,7 +35,7 @@ module Bamboozled
           case response.code
           when 200..201
             begin
-              if response.nil?
+              if response.body.to_s.empty?
                 {"headers" => response.headers}.with_indifferent_access
               else
                 JSON.parse(response.body).with_indifferent_access
