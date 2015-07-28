@@ -100,8 +100,26 @@ describe "Employees" do
     url.must_equal required_url
   end
 
+  describe "#add" do
+    it 'creates a new employee in BambooHR' do
+
+      xml = YAML.load_file('spec/fixtures/add_employee_xml.yml')
+      response = File.new('spec/fixtures/add_employee_response.json')
+      details = JSON.parse(File.read('spec/fixtures/add_employee_details.json'))
+
+      stub_request(:post, /.*api\.bamboohr\.com.*/).
+        with(xml).to_return(response)
+
+      employee = @client.employee.add(employee_details: details)
+
+      employee["headers"]["location"].
+        must_equal "https://api.bamboohr.com/api/gateway.php/alphasights/v1/employees/44259"
+    end
+  end
+
   # TODO - Figure out how to test this with webmock
   # it 'returns binary data for an employee photo' do
   # end
 
 end
+

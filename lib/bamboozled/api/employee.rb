@@ -54,6 +54,22 @@ module Bamboozled
         "http://#{@subdomain}.bamboohr.com/employees/photos/?h=#{digest}"
       end
 
+      def add(employee_details:)
+        details = generate_xml(employee_details)
+        options = {body: details}
+
+        request(:post, "employees/", options)
+      end
+
+      private
+
+      def generate_xml(employee_details)
+        "".tap do |xml|
+          xml << "<employee>"
+          employee_details.each { |k, v| xml << "<field id='#{k}'>#{v}</field>" }
+          xml << "</employee>"
+        end
+      end
     end
   end
 end
