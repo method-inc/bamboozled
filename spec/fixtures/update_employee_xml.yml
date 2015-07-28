@@ -1,0 +1,8 @@
+body:
+  <employee><field id='firstName'>Bruce</field><field id='lastName'>Wayne</field><field id='workEmail'>b.wayne@gmail.com</field><field id='jobTitle'>Batman</field><field id='city'>Gotham</field></employee>
+headers:
+  Accept:
+  - application/json
+  User-Agent:
+  - Bamboozled/0.0.7
+
