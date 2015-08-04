@@ -54,7 +54,7 @@ module Bamboozled
         "http://#{@subdomain}.bamboohr.com/employees/photos/?h=#{digest}"
       end
 
-      def add(employee_details:)
+      def add(employee_details)
         details = generate_xml(employee_details)
         options = {body: details}
 

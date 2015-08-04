@@ -106,7 +106,7 @@ RSpec.describe "Employees" do
       stub_request(:post, /.*api\.bamboohr\.com.*/).
         with(xml).to_return(response)
 
-      employee = @client.employee.add(employee_details: details)
+      employee = @client.employee.add(details)
       location = employee["headers"]["location"]
 
       expect(location).to eq "https://api.bamboohr.com/api/gateway.php/alphasights/v1/employees/44259"
