@@ -1,7 +1,6 @@
-require_relative '../../spec_helper'
+require "spec_helper"
 
-describe "HashWithIndifferentAccess" do
-
+RSpec.describe "HashWithIndifferentAccess" do
   before do
     @client = Bamboozled.client(subdomain:'x', api_key:'x')
   end
@@ -12,13 +11,11 @@ describe "HashWithIndifferentAccess" do
 
     employee = @client.employee.find(1234)
 
-    employee.is_a?(Hash).must_equal true
-    employee.count.must_equal 3
-    employee['firstName'].must_equal "John"
-    employee['lastName'].must_equal "Doe"
-
-    employee[:firstName].must_equal "John"
-    employee[:lastName].must_equal "Doe"
+    expect(employee).to be_a Hash
+    expect(employee.count).to eq 3
+    expect(employee["firstName"]).to eq "John"
+    expect(employee[:firstName]).to eq "John"
+    expect(employee["lastName"]).to eq "Doe"
+    expect(employee[:lastName]).to eq "Doe"
   end
-
 end
