@@ -1,6 +1,6 @@
-require_relative '../../spec_helper'
+require "spec_helper"
 
-describe "Employees" do
+RSpec.describe "Employees" do
 
   before do
     @client = Bamboozled.client(subdomain:'x', api_key:'x')
@@ -12,8 +12,8 @@ describe "Employees" do
 
     employees = @client.employee.all
 
-    employees.is_a?(Array).must_equal true
-    employees.first.count.must_equal 7
+    expect(employees).to be_a Array
+    expect(employees.first.count).to eq 7
   end
 
   it "Gets one employee" do
@@ -22,10 +22,10 @@ describe "Employees" do
 
     employee = @client.employee.find(1234)
 
-    employee.is_a?(Hash).must_equal true
-    employee.count.must_equal 3
-    employee['firstName'].must_equal "John"
-    employee['lastName'].must_equal "Doe"
+    expect(employee).to be_a Hash
+    expect(employee.count).to eq 3
+    expect(employee["firstName"]).to eq "John"
+    expect(employee["lastName"]).to eq "Doe"
   end
 
   it "Gets employee job info" do
@@ -34,20 +34,21 @@ describe "Employees" do
 
     info = @client.employee.job_info(1234)
 
-    info.is_a?(Hash).must_equal true
-    info[:table][:row].first[:employeeId].must_equal "100"
+    expect(info).to be_a Hash
+    expect(info[:table][:row].first[:employeeId]).to eq "100"
+
     info[:table][:row].first[:field].each do |f|
       case f[:id]
       when 'location'
-        f[:__content__].must_equal "New York Office"
+        expect(f[:__content__]).to eq "New York Office"
       when 'division'
-        f[:__content__].must_equal "Sprockets"
+        expect(f[:__content__]).to eq "Sprockets"
       when 'department'
-        f[:__content__].must_equal "Research and Development"
+        expect(f[:__content__]).to eq "Research and Development"
       when 'jobTitle'
-        f[:__content__].must_equal "Machinist"
+        expect(f[:__content__]).to eq "Machinist"
       when 'reportsTo'
-        f[:__content__].must_equal "John Smith"
+        expect(f[:__content__]).to eq "John Smith"
       end
     end
   end
@@ -59,16 +60,11 @@ describe "Employees" do
     future = Time.now + (60 * 60 * 24 * 180)
     estimate = @client.employee.time_off_estimate(1234, future)
 
-    puts estimate
 
-    estimate.is_a?(Hash).must_equal true
-    estimate['estimates'].keys.must_equal ['end', 'estimate']
-    estimate['estimates']['estimate'].count.must_equal 2
-    estimate['estimates']['estimate'].first.keys.must_equal ['timeOffType', 'name', 'units', 'balance']
-  end
-
-  it 'returns binary data for an employee email' do
-
+    expect(estimate).to be_a Hash
+    expect(estimate["estimates"].keys).to match_array ["end", "estimate"]
+    expect(estimate["estimates"]["estimate"].count).to eq 2
+    expect(estimate["estimates"]["estimate"].first.keys).to match_array ["timeOffType", "name", "units", "balance"]
   end
 
   it 'returns the proper url using employee email address' do
@@ -78,15 +74,15 @@ describe "Employees" do
 
     # Normal
     url = @client.employee.photo_url('me@here.com')
-    url.must_equal required_url
+    expect(url).to eq required_url
 
     # Email with spaces
     url = @client.employee.photo_url(' me@here.com ')
-    url.must_equal required_url
+    expect(url).to eq required_url
 
     # Uppercase emails
     url = @client.employee.photo_url('ME@HERE.COM')
-    url.must_equal required_url
+    expect(url).to eq required_url
   end
 
   it 'returns the proper url using employee id' do
@@ -97,7 +93,7 @@ describe "Employees" do
     required_url = "http://x.bamboohr.com/employees/photos/?h=#{hashed}"
 
     url = @client.employee.photo_url(123)
-    url.must_equal required_url
+    expect(url).to eq required_url
   end
 
   describe "#add" do
@@ -110,16 +106,11 @@ describe "Employees" do
       stub_request(:post, /.*api\.bamboohr\.com.*/).
         with(xml).to_return(response)
 
-      employee = @client.employee.add(employee_details: details)
+      employee = @client.employee.add(details)
+      location = employee["headers"]["location"]
 
-      employee["headers"]["location"].
-        must_equal "https://api.bamboohr.com/api/gateway.php/alphasights/v1/employees/44259"
+      expect(location).to eq "https://api.bamboohr.com/api/gateway.php/alphasights/v1/employees/44259"
     end
   end
-
-  # TODO - Figure out how to test this with webmock
-  # it 'returns binary data for an employee photo' do
-  # end
-
 end
 

@@ -1,13 +1,11 @@
-require 'rake/testtask'
+require "bundler/gem_tasks"
 
-Rake::TestTask.new do |t|
-  t.test_files = FileList['spec/lib/bamboozled/*_spec.rb']
-  t.verbose = true
-end
-
-task :default => :test
+require "rspec/core/rake_task"
+RSpec::Core::RakeTask.new(:spec)
 
 desc "Open an irb session preloaded with this library"
 task :console do
   sh "irb -rubygems -I lib -r bamboozled.rb"
 end
+
+task default: :spec
