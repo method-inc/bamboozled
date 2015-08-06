@@ -21,5 +21,9 @@ module Bamboozled
     def time_off
       @time_off ||= Bamboozled::API::TimeOff.new(@subdomain, @api_key)
     end
+
+    def tabular
+      @tabular ||= Bamboozled::API::Tabular.new(@subdomain, @api_key)
+    end
   end
 end

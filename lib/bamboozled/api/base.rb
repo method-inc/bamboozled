@@ -36,7 +36,7 @@ module Bamboozled
           when 200..201
             begin
               if response.body.to_s.empty?
-                {"headers" => response.headers}.with_indifferent_access
+                {"headers" => response.headers, "code" => "200", "message" => "ok"}.with_indifferent_access
               else
                 JSON.parse(response.body).with_indifferent_access
               end

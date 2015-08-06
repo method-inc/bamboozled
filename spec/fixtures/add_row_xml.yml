@@ -1,0 +1,9 @@
+body:
+  <row><field id='date'>2015-08-04</field><field id='location'>New York</field><field id='division'>North America</field><field id='department'>Software Engineering</field><field id='jobTitle'>Apprentice</field><field id='reportsTo'>John Johnson</field></row>
+headers:
+  Accept:
+  - application/json
+  User-Agent:
+  - Bamboozled/0.0.7
+
+
