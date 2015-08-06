@@ -8,7 +8,9 @@ require_relative './bamboozled/version'
 require_relative './bamboozled/errors'
 require_relative './bamboozled/base'
 
-%w(base employee report time_off meta).each {|a| require_relative "./bamboozled/api/#{a}"}
+%w(base employee report time_off meta tabular).each do |a|
+  require_relative "./bamboozled/api/#{a}"
+end
 
 module Bamboozled
   class << self
