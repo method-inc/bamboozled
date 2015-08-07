@@ -10,6 +10,12 @@ module Bamboozled
         request(:post, url, options)
       end
 
+      def get_table(table_name: nil, employee_id: nil)
+        url = "employees/#{employee_id}/tables/#{table_name}"
+
+        request(:get, url)
+      end
+
       private
 
       def generate_xml(details)

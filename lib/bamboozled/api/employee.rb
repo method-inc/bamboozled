@@ -56,7 +56,7 @@ module Bamboozled
 
       def add(employee_details)
         details = generate_xml(employee_details)
-        options = {body: details}
+        options = { body: details }
 
         request(:post, "employees/", options)
       end
