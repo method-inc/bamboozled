@@ -121,8 +121,7 @@ RSpec.describe "Employees" do
       url = "https://x:x@api.bamboohr.com/api/gateway.php/x/v1/employees/1234"
 
       stub_request(:post, url).with(xml).to_return(response)
-      employee = @client.employee.update(bamboo_id: "1234",
-                                         employee_details: details)
+      employee = @client.employee.update("1234", details)
       expected_headers = {
                            "content-type" => ["application/json; charset=utf-8"],
                            "date" => ["Tue, 17 Jun 2014 19:25:35 UTC"]

@@ -61,7 +61,7 @@ module Bamboozled
         request(:post, "employees/", options)
       end
 
-      def update(bamboo_id: nil, employee_details: nil)
+      def update(bamboo_id, employee_details)
         details = generate_xml(employee_details)
         options = { body: details }
 
