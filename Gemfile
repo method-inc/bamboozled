@@ -1,10 +1,10 @@
 source "http://rubygems.org"
-
 gemspec
 
 group :development, :test do
-  gem 'bundler', '>= 1.6.2'
-  gem 'webmock'
-  gem 'turn'
-  gem 'rake'
+  gem "guard"
+  gem "guard-rspec", require: false
+  gem "rubocop", require: false
+  gem "rubocop-rspec", require: false
+  gem "guard-rubocop", require: false
 end

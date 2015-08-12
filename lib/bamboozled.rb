@@ -1,14 +1,16 @@
-require 'httparty'
-require 'json'
-require 'uri'
+require "httparty"
+require "json"
+require "uri"
 
-require_relative './bamboozled/ext/yesno'
-
-require_relative './bamboozled/version'
-require_relative './bamboozled/errors'
-require_relative './bamboozled/base'
-
-%w(base employee report time_off meta).each {|a| require_relative "./bamboozled/api/#{a}"}
+require "bamboozled/version"
+require "bamboozled/base"
+require "bamboozled/errors"
+require "bamboozled/ext/yesno"
+require "bamboozled/api/base"
+require "bamboozled/api/employee"
+require "bamboozled/api/report"
+require "bamboozled/api/time_off"
+require "bamboozled/api/meta"
 
 module Bamboozled
   class << self
