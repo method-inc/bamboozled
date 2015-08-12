@@ -1,4 +1,3 @@
 HTTP/1.1 200 OK
 content-type: application/json; charset=utf-8
 date: Tue, 17 Jun 2014 19:25:35 UTC
-location: https://api.bamboohr.com/api/gateway.php/alphasights/v1/employees/44259
