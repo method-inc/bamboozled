@@ -29,6 +29,9 @@ client.employee.all('hireDate,displayName')
 # Returns a hash of a single employee
 client.employee.find(employee_id, fields = nil)
 
+# Adds an employee
+client.employee.add(employee_details_hash)
+
 # Tabular employee data
 client.employee.job_info(employee_id)
 client.employee.employment_status(employee_id)
