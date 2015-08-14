@@ -83,3 +83,9 @@ Here are a few examples:
 * [#3](https://github.com/Skookum/bamboozled/issues/3): Added `HashWithIndifferentAccess` to to fix inconsistencies when accessing data. ([@markrickert][])
 * New method `Employee#add` allows client to create new employees. ([@kylefdoherty][])
 ```
+
+---
+
+<p align="center">
+  <img src="logos/skookum_mark_black.svg" alt="Skookum" />
+</p>

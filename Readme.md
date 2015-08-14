@@ -10,6 +10,8 @@
 [coveralls]: https://coveralls.io/r/Skookum/bamboozled
 [inchdocs]: http://inch-ci.org/github/Skookum/bamboozled
 
+---
+
 # Bamboozled
 
 Bamboozled is a Ruby wrapper for the [BambooHR API](http://www.bamboohr.com/api/documentation/).
@@ -140,4 +142,11 @@ You can see a list of them [here](https://github.com/Skookum/bamboozled/graphs/c
 
 ## License
 
-MIT. See the [LICENSE](/LICENSE) file.
+This project is licensed under the terms of the MIT license. See the
+[LICENSE](/LICENSE) file.
+
+---
+
+<p align="center">
+  <img src="logos/skookum_mark_black.svg" alt="Skookum" />
+</p>
