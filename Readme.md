@@ -1,30 +1,74 @@
+[![Gem Version](https://img.shields.io/gem/v/bamboozled.svg)][rubygems]
+[![Build Status](https://img.shields.io/travis/Skookum/bamboozled.svg)][travis]
+[![Code Climate](https://img.shields.io/codeclimate/github/Skookum/bamboozled.svg)][codeclimate]
+[![Coverage Status](https://img.shields.io/coveralls/Skookum/bamboozled.svg)][coveralls]
+[![Inline Docs](http://inch-ci.org/github/Skookum/bamboozled.svg?style=shields)][inchdocs]
+
+[rubygems]: https://rubygems.org/gems/bamboozled
+[travis]: https://travis-ci.org/Skookum/bamboozled
+[codeclimate]: https://codeclimate.com/github/Skookum/bamboozled
+[coveralls]: https://coveralls.io/r/Skookum/bamboozled
+[inchdocs]: http://inch-ci.org/github/Skookum/bamboozled
+
 # Bamboozled
 
-[![Gem Version](https://badge.fury.io/rb/bamboozled.svg)](http://badge.fury.io/rb/bamboozled) [![Code Climate](https://codeclimate.com/github/Skookum/bamboozled.png)](https://codeclimate.com/github/Skookum/bamboozled) [![Build Status](https://travis-ci.org/Skookum/bamboozled.svg?branch=master)](https://travis-ci.org/Skookum/bamboozled)
+Bamboozled is a Ruby wrapper for the [BambooHR API](http://www.bamboohr.com/api/documentation/).
 
-Bamboozled wraps the [BambooHR API](http://www.bamboohr.com/api/documentation/) without the use of Rails dependencies. Currently, this gem is **READ-ONLY**.
+## Versioning
 
-# Usage:
+Bamboozled follows [Semantic Versioning 2.0.0](http://semver.org/). Make sure to
+always bound the major version when installing if you want to avoid breaking
+changes.
 
-Install the gem with `gem install bamboozled` or add this to your `Gemfile`: `gem 'bamboozled'`
+## Documentation
+
+This documentation tracks the latest changes in the `master` branch of this
+repo. Some of the features described might not be available in older versions of
+the gem (including the current stable version). Please consult the relevant git
+tag (e.g. v0.0.7) if you need documentation for a specific Bamboozled version.
+
+## Installation
+
+Bamboozled's installation follows the standard gem installation process:
+
+```sh
+$ gem install bamboozled
+```
+
+If you prefer to install Bamboozled through `bundler` then add it to your
+`Gemfile`:
+
+```ruby
+gem "bamboozled"
+```
+
+## Usage
+
+Create a `client` and provide it with your BambooHR subdomain and an API key:
 
 ```ruby
 # Create the client:
-client = Bamboozled.client(subdomain: 'your_subdomain', api_key: 'your_api_key')
+client = Bamboozled.client(subdomain: "your_subdomain", api_key: "your_api_key")
 ```
 
-> TIP! Create an API key by logging into your BambooHR account, then click your image in the upper right corner and select "API Keys". Then click "Add A New Key".
+> TIP! Create an API key by logging into your BambooHR account, then click your
+> image in the upper right corner and select "API Keys".
 
 ### Employee related data:
 
-You can pass an array of fields to `all` or `:all` to get all fields your user is allowed to access. Because BambooHR's API doesn't allow for specifying fields on the `/employees/directory` API endpoint, passing a list of fields to retrieve will be signifigantly slower than getting just the default fields since the gem will get the directory of employees, then request the data for each individual employee resulting in `employees.count + 1` API calls.
+You can pass an array of fields to `all` or `:all` to get all fields your user
+is allowed to access. Because BambooHR's API doesn't allow for specifying fields
+on the `/employees/directory` API endpoint, passing a list of fields to retrieve
+will be signifigantly slower than getting just the default fields since the gem
+will get the directory of employees, then request the data for each individual
+employee resulting in `employees.count + 1` API calls.
 
 ```ruby
 # Returns an array of all employees
 client.employee.all # Gets all employees with default fields
 client.employee.all(:all) # Gets all fields for all employees
-client.employee.all(['hireDate', 'displayName'])
-client.employee.all('hireDate,displayName')
+client.employee.all(["hireDate", "displayName"])
+client.employee.all("hireDate,displayName")
 
 # Returns a hash of a single employee
 client.employee.find(employee_id, fields = nil)
@@ -53,7 +97,7 @@ client.employee.photo_binary(employee_id)
 ```ruby
 # Get time off requests filtered by a number of parameters
 # :id - the ID of the time off request
-# :action - 
+# :action -
 # :employeeId - the ID of the employee you're looking for
 # :start - filter start date
 # :end - filter end date
@@ -62,17 +106,17 @@ client.employee.photo_binary(employee_id)
 client.time_off.requests(:employeeId: employee_id, start: Time.now)
 
 # See who is out when.
-client.time_off.whos_out(Time.now, '2014-12-31')
+client.time_off.whos_out(Time.now, "2014-12-31")
 ```
 
-# Reports
+### Reports
 
 ```ruby
 # Find a report by its number
-client.report.find(report_number, format = 'JSON', fd = true)
+client.report.find(report_number, format = "JSON", fd = true)
 ```
 
-# Metadata
+### Metadata
 
 ```ruby
 # Get fields
@@ -86,22 +130,13 @@ client.meta.tables
 client.meta.users
 ```
 
-## Todo:
-
-1. Write more tests!
-2. Implement CRUD so the gem is not read-only any more.
-2. ~~Implement photos endpoints.~~
-3. ~~Implement metadata endpoints.~~
-4. Implement last change information endpoints.
-
 ## Contributing
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Make some specs pass
-5. Push to the branch (`git push origin my-new-feature`)
-6. Create new Pull Request
+Thank you for contributing! We always welcome bug reports and/or pull requests.
+Please take the time to go through our [contribution guidelines](CONTRIBUTING.md).
+
+Special thanks to all the awesome people who have helped make this gem better.
+You can see a list of them [here](https://github.com/Skookum/bamboozled/graphs/contributors).
 
 ## License
 
