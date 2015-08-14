@@ -87,5 +87,5 @@ Here are a few examples:
 ---
 
 <p align="center">
-  <img src="logos/skookum_mark_black.svg" alt="Skookum" />
+  <img src="logos/skookum_mark_black.png" alt="Skookum" width="100" />
 </p>

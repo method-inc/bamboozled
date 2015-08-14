@@ -12,7 +12,9 @@
 
 ---
 
-# Bamboozled
+<p align="center">
+  <img src="logos/bamboozled_logo_black.png" alt="Bamboozled" />
+</p>
 
 Bamboozled is a Ruby wrapper for the [BambooHR API](http://www.bamboohr.com/api/documentation/).
 
@@ -148,5 +150,5 @@ This project is licensed under the terms of the MIT license. See the
 ---
 
 <p align="center">
-  <img src="logos/skookum_mark_black.svg" alt="Skookum" />
+  <img src="logos/skookum_mark_black.png" alt="Skookum" width="100" />
 </p>
