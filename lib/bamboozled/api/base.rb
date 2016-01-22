@@ -38,9 +38,9 @@ module Bamboozled
               if response.body.to_s.empty?
                 {"headers" => response.headers}.with_indifferent_access
               else
-                JSON.parse(response.body).with_indifferent_access
+                normalize_json_response(response.body)
               end
-            rescue
+            rescue JSON::ParserError
               MultiXml.parse(response, symbolize_keys: true)
             end
           when 400
@@ -74,6 +74,15 @@ module Bamboozled
 
         def path_prefix
           "https://api.bamboohr.com/api/gateway.php/#{subdomain}/v1/"
+        end
+
+        def normalize_json_response(json)
+          json = JSON.parse(json)
+          if json.is_a?(Array)
+            { json: json }.with_indifferent_access.fetch(:json)
+          else
+            json.with_indifferent_access
+          end
         end
     end
   end
