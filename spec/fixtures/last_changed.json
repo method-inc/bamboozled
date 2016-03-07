@@ -1,0 +1,28 @@
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+date: Tue, 17 Jun 2014 19:25:35 UTC
+
+{
+  "employees": {
+    "3": {
+      "id":"3",
+      "action":"Inserted",
+      "lastChanged":"2011-06-02T19:26:23+00:00"
+    },
+    "4": {
+      "id":"4",
+      "action":"Updated",
+      "lastChanged":"2011-06-02T19:26:23+00:00"
+    },
+    "5": {
+      "id":"5",
+      "action":"Deleted",
+      "lastChanged":"2011-06-02T19:26:23+00:00"
+    },
+    "10": {
+      "id":"10",
+      "action":"Inserted",
+      "lastChanged":"2011-05-31T22:57:10+00:00"
+    }
+  }
+}

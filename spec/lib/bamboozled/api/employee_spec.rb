@@ -108,6 +108,16 @@ RSpec.describe "Employees" do
     expect(url).to eq required_url
   end
 
+  it "Gets all employee records which have changed since a given date" do
+    response = File.new("spec/fixtures/last_changed.json")
+    stub_request(:any, /.*api\.bamboohr\.com.*/).to_return(response)
+
+    employees = @client.employee.last_changed("2011-06-02T19:26:23+00:00")
+
+    expect(employees).to be_a Hash
+    expect(employees.keys.count).to eq 4
+  end
+
   describe "#add" do
     it "creates a new employee in BambooHR" do
       xml = YAML.load_file("spec/fixtures/add_employee_xml.yml")

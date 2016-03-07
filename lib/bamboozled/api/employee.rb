@@ -23,6 +23,16 @@ module Bamboozled
         request(:get, "employees/#{employee_id}?fields=#{fields}")
       end
 
+      def last_changed(date = "2011-06-05T00:00:00+00:00", type = nil)
+        query = {
+          since:  date.respond_to?(:iso8601) ? date.iso8601 : date,
+          type: type
+        }
+
+        response = request(:get, "employees/changed", query)
+        response['employees']
+      end
+
       # Tabular data
       [:job_info, :employment_status, :compensation, :dependents, :contacts].each do |action|
         define_method(action.to_s) do |argument_id|
