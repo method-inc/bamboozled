@@ -1,7 +1,8 @@
 require: rubocop-rspec
 
 AllCops:
-  RunRailsCops: false
+  Rails:
+    Enabled: true
   DisplayCopNames: false
   DisplayStyleGuide: false
   StyleGuideCopsOnly: false
@@ -348,7 +349,7 @@ Style/SingleLineBlockParams:
 Style/SingleLineMethods:
   Enabled: true
 
-Style/SingleSpaceBeforeFirstArg:
+Style/SpaceBeforeFirstArg:
   Enabled: true
 
 Style/SpaceAfterColon:
@@ -357,7 +358,7 @@ Style/SpaceAfterColon:
 Style/SpaceAfterComma:
   Enabled: true
 
-Style/SpaceAfterControlKeyword:
+Style/SpaceAroundKeyword:
   Enabled: true
 
 Style/SpaceAfterMethodName:
@@ -393,7 +394,7 @@ Style/SpaceAroundEqualsInParameterDefault:
 Style/SpaceAroundOperators:
   Enabled: true
 
-Style/SpaceBeforeModifierKeyword:
+Style/SpaceAroundKeyword:
   Enabled: true
 
 Style/SpaceInsideBrackets:
@@ -436,7 +437,7 @@ Style/Tab:
 Style/TrailingBlankLines:
   Enabled: true
 
-Style/TrailingComma:
+Style/TrailingCommaInLiteral:
   Enabled: true
 
 Style/TrailingWhitespace:
@@ -596,7 +597,7 @@ Lint/RescueException:
 Lint/ShadowingOuterLocalVariable:
   Enabled: true
 
-Lint/SpaceBeforeFirstArg:
+Style/SpaceBeforeFirstArg:
   Enabled: true
 
 Lint/StringConversionInInterpolation:
