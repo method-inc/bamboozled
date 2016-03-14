@@ -12,7 +12,7 @@ module Bamboozled
     end
 
     def to_s
-      "#{self.class.to_s} : #{response.code} #{response.body}" + (hint ? "\n#{hint}" : "")
+      "#{self.class} : #{response.code} #{response.body}" + (hint ? "\n#{hint}" : "")
     end
   end
 
