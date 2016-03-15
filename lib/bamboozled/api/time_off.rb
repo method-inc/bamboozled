@@ -1,9 +1,8 @@
 module Bamboozled
   module API
     class TimeOff < Base
-
       def requests(options = {})
-        allowed_parameters = [:id, :action, :employeeId, :start, :end, :type, :status]
+        allowed_parameters = %i(id action employeeId start end type status)
         options = options.keep_if { |k,_| allowed_parameters.include? k }
 
         # Convert non string dates to strings.
@@ -14,7 +13,9 @@ module Bamboozled
         # Make sure all statuses are allowed
         if options[:status]
           allowed_statuses = %w(approved denied superceded requested canceled)
-          options[:status] = Array(options[:status]).keep_if { |v| allowed_statuses.include? v }.join(",")
+          options[:status] = Array(options[:status])
+                             .keep_if { |v| allowed_statuses.include? v }
+                             .join(",")
         end
 
         request(:get, "time_off/requests?#{URI.encode_www_form(options)}")
