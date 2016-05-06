@@ -6,6 +6,7 @@ group :test do
 end
 
 group :development, :test do
+  gem "listen", "3.1.1"
   gem "guard"
   gem "guard-rspec", require: false
   gem "rubocop", require: false
