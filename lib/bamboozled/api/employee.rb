@@ -24,12 +24,12 @@ module Bamboozled
       end
 
       def last_changed(date = "2011-06-05T00:00:00+00:00", type = nil)
-        query = {}
+        query = Hash.new
         query[:since] = date.respond_to?(:iso8601) ? date.iso8601 : date
         query[:type] = type unless type.nil?
 
-        response = request(:get, "employees/changed", {query: query})
-        response['employees']
+        response = request(:get, "employees/changed", query: query)
+        response["employees"]
       end
 
       # Tabular data
