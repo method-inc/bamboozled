@@ -1,4 +1,5 @@
 require 'json'
+require "time"
 require 'active_support/core_ext/hash/indifferent_access'
 
 module Bamboozled

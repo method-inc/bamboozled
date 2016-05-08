@@ -74,6 +74,12 @@ client.employee.all(:all) # Gets all fields for all employees
 client.employee.all(["hireDate", "displayName"])
 client.employee.all("hireDate,displayName")
 
+# Get the employee records which have changed since a given date
+client.employee.last_changed("2015-01-01T00:00:00-08:00", :updated)
+client.employee.last_changed("2015-01-01T00:00:00-08:00", :inserted)
+client.employee.last_changed("2015-01-01T00:00:00-08:00", :deleted)
+client.employee.last_changed("2015-01-01T00:00:00-08:00") # Return all changes
+
 # Returns a hash of a single employee
 client.employee.find(employee_id, fields = nil)
 
