@@ -41,29 +41,25 @@ RSpec.describe "Employees" do
     expect(employee["lastName"]).to eq "Doe"
   end
 
-  it "Gets employee job info" do
-    response = File.new("spec/fixtures/job_info.xml")
+  it "Gets employee job infos" do
+    response = File.new("spec/fixtures/job_info.json")
     stub_request(:any, /.*api\.bamboohr\.com.*/).to_return(response)
 
     info = @client.employee.job_info(1234)
 
-    expect(info).to be_a Hash
-    expect(info[:table][:row].first[:employeeId]).to eq "100"
-
-    info[:table][:row].first[:field].each do |f|
-      case f[:id]
-      when "location"
-        expect(f[:__content__]).to eq "New York Office"
-      when "division"
-        expect(f[:__content__]).to eq "Sprockets"
-      when "department"
-        expect(f[:__content__]).to eq "Research and Development"
-      when "jobTitle"
-        expect(f[:__content__]).to eq "Machinist"
-      when "reportsTo"
-        expect(f[:__content__]).to eq "John Smith"
-      end
-    end
+    expect(info).to be_a Array
+    expect(info.first["employeeId"]).to eq "100"
+    job_info = info.first
+    expect(job_info).to eql({
+        "id"         => "1",
+        "employeeId" => "100",
+        "date"       => "2010-06-01",
+        "location"   => "New York Office",
+        "division"   => "Sprockets",
+        "department" => "Research and Development",
+        "jobTitle"   => "Machinist",
+        "reportsTo"  => "John Smith"
+      })
   end
 
   it "Gets an employee's time off estimate" do
