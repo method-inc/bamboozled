@@ -39,7 +39,12 @@ module Bamboozled
               if response.body.to_s.empty?
                 {"headers" => response.headers}.with_indifferent_access
               else
-                JSON.parse(response.body).with_indifferent_access
+                json = JSON.parse(response.body)
+                if json.is_a?(Array)
+                  json
+                else
+                  json.with_indifferent_access
+                end
               end
             rescue
               MultiXml.parse(response, symbolize_keys: true)

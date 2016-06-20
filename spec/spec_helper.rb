@@ -1,8 +1,13 @@
 require "coveralls"
-Coveralls.wear!
-
 require "webmock/rspec"
 require "rspec"
+require "simplecov"
+
+SimpleCov.start do
+  add_filter 'spec/fixtures'
+end
+
+Coveralls.wear!
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

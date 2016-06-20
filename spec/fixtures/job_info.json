@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+date: Tue, 17 Jun 2014 19:25:35 UTC
+
+ [
+   {
+     "id": "1",
+     "employeeId" :"100",
+     "date": "2010-06-01",
+     "location": "New York Office",
+     "division": "Sprockets",
+     "department": "Research and Development",
+     "jobTitle": "Machinist",
+     "reportsTo": "John Smith"
+   },
+   {
+     "id": "2",
+     "employeeId" :"100",
+     "date": "2009-03-01",
+     "location": "New York Office",
+     "division": "Sprockets",
+     "department": "Sales",
+     "jobTitle": "Salesman",
+     "reportsTo": "Jane Doe"
+  }
+]
