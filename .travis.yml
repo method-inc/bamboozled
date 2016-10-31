@@ -1,4 +1,5 @@
 language: ruby
+sudo: false
 rvm:
   - 2.0.0
   - 2.1
@@ -13,10 +14,13 @@ install:
 
 script:
   - bundle exec rspec
-  - bundle exec pronto run -f github_pr -c origin/master
+  - bundle exec pronto run -f github_status github_pr -c origin/master
 
 matrix:
   fast_finish: true
   allow_failures:
     - rvm: ruby-head
     - rvm: jruby-head
+
+env:
+  - PULL_REQUEST_ID = ${TRAVIS_PULL_REQUEST}
