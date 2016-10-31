@@ -1,19 +1,22 @@
 language: ruby
-sudo: false
-cache: bundler
 rvm:
   - 2.0.0
   - 2.1
   - 2.2
+  - 2.3
   - ruby-head
   - jruby-head
+
+before_install: gem update --remote bundler && bundle --version
+install:
+  - bundle install --retry=3
+
+script:
+  - bundle exec rspec
+  - bundle exec pronto run -f github_status github_pr -c origin/master
+
 matrix:
   fast_finish: true
   allow_failures:
     - rvm: ruby-head
     - rvm: jruby-head
-before_install: gem update --remote bundler && bundle --version
-install:
-  - bundle install --retry=3
-script:
-  - bundle exec rspec
