@@ -1,6 +1,5 @@
 require 'json'
 require "time"
-require 'active_support/core_ext/hash/indifferent_access'
 
 module Bamboozled
   module API
@@ -37,9 +36,9 @@ module Bamboozled
           when 200..201
             begin
               if response.body.to_s.empty?
-                {"headers" => response.headers}.with_indifferent_access
+                { "headers" => response.headers }
               else
-                JSON.parse(response.body).with_indifferent_access
+                JSON.parse(response)
               end
             rescue
               MultiXml.parse(response, symbolize_keys: true)
