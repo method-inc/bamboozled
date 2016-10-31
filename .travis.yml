@@ -13,7 +13,7 @@ install:
 
 script:
   - bundle exec rspec
-  - bundle exec pronto run -f github_status github_pr -c origin/master
+  - bundle exec pronto run -f github_pr -c origin/master
 
 matrix:
   fast_finish: true
