@@ -1,13 +1,16 @@
 language: ruby
 sudo: false
 rvm:
+  - 2.0.0
+  - 2.1
+  - 2.2
   - 2.3.0
+  - ruby-head
+  - jruby-head
 
 before_install: gem update --remote bundler && bundle --version
 install:
   - bundle install --retry=3
-  - echo $TRAVIS_PULL_REQUEST
-  - echo $PULL_REQUEST_ID
 
 script:
   - bundle exec rspec
@@ -18,6 +21,3 @@ matrix:
   allow_failures:
     - rvm: ruby-head
     - rvm: jruby-head
-
-env:
-  - PULL_REQUEST_ID = ${TRAVIS_PULL_REQUEST}
