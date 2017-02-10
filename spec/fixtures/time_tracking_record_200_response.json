@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Date: Fri, 10 Feb 2017 17:31:40 GMT
+Cache-Control: no-cache
+Vary: User-Agent
+X-Content-Type-Options: nosniff
+Content-Length: 266
+Content-Type: application/json
+
+{"timeTrackingId":"37_2301_REG","employeeId":"40488","divisionId":null,"departmentId":null,"jobTitleId":null,"payCode":null,"dateHoursWorked":"2016-08-11","type":"P","payRate":"19.0000","rateType":"REG","hoursWorked":"4.5760","adjustedHours":"0.0000","jobData":null}
