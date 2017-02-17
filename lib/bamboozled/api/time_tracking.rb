@@ -8,14 +8,14 @@ module Bamboozled
       def add(time_tracking_details)
         # details = generate_xml(time_tracking_details)
         details = time_tracking_details.to_json
-        options = { body: details }
+        options = { body: details, headers: { 'Content-Type' => 'application/json' } }
 
         request(:post, "timetracking/add/", options)
       end
 
       def adjust(time_tracking_id, hours_worked)
         details = { timeTrackingId: time_tracking_id, hoursWorked: hours_worked }.to_json
-        options = { body: details }
+        options = { body: details, headers: { 'Content-Type' => 'application/json' } }
 
         request(:put, "timetracking/adjust", options)
       end
