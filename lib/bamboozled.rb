@@ -10,6 +10,7 @@ require "bamboozled/api/base"
 require "bamboozled/api/employee"
 require "bamboozled/api/report"
 require "bamboozled/api/time_off"
+require "bamboozled/api/time_tracking"
 require "bamboozled/api/meta"
 
 module Bamboozled

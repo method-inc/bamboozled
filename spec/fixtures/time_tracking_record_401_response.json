@@ -1,0 +1,10 @@
+HTTP/1.0 401 Unauthorized
+Date: Fri, 10 Feb 2017 17:37:16 GMT
+Server: Apache
+X-BambooHR-Error-Messsage: API key not provided or invalid
+WWW-Authenticate: Basic realm="https://apibamboohr.com/boomrdev"
+Vary: User-Agent
+X-Content-Type-Options: nosniff
+Content-Length: 0
+Connection: close
+Content-Type: text/html; charset=UTF-8

@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Date: Fri, 10 Feb 2017 17:31:40 GMT
+Cache-Control: no-cache
+Vary: User-Agent
+Content-Type: application/json
+
+{"id":"37_2302_REG"}
