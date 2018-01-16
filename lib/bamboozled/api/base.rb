@@ -6,8 +6,10 @@ module Bamboozled
     class Base
       attr_reader :subdomain, :api_key
 
-      def initialize(subdomain, api_key)
-        @subdomain, @api_key = subdomain, api_key
+      def initialize(subdomain, api_key, httparty_options = {})
+        @subdomain = subdomain
+        @api_key = api_key
+        @httparty_options = httparty_options || {}
       end
 
       protected
@@ -18,7 +20,7 @@ module Bamboozled
             method:  method
           }
 
-          httparty_options = {
+          httparty_options = @httparty_options.merge({
             query:  options[:query],
             body:   options[:body],
             format: :plain,
@@ -27,7 +29,7 @@ module Bamboozled
               "Accept"       => "application/json",
               "User-Agent"   => "Bamboozled/#{Bamboozled::VERSION}"
             }.update(options[:headers] || {})
-          }
+          })
 
           response = HTTParty.send(method, "#{path_prefix}#{path}", httparty_options)
           params[:response] = response.inspect.to_s

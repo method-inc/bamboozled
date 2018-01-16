@@ -16,8 +16,8 @@ require "bamboozled/api/meta"
 module Bamboozled
   class << self
     # Creates a standard client that will raise all errors it encounters
-    def client(subdomain: nil, api_key: nil)
-      Bamboozled::Base.new(subdomain: subdomain, api_key: api_key)
+    def client(subdomain: nil, api_key: nil, httparty_options: {})
+      Bamboozled::Base.new(subdomain: subdomain, api_key: api_key, httparty_options: httparty_options)
     end
   end
 end
