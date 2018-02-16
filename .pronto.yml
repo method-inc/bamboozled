@@ -1,2 +1,5 @@
+all:
+  exclude:
+    - 'spec/**/*'
 max_warnings: 150
 verbose: false

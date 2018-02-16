@@ -44,7 +44,9 @@ module Bamboozled
               end
             rescue
               typecast = options.fetch(:typecast_values, true)
-              MultiXml.parse(response, symbolize_keys: true, typecast_xml_value: typecast)
+              MultiXml.parse(response,
+                             symbolize_keys: true,
+                             typecast_xml_value: typecast)
             end
           when 400
             raise Bamboozled::BadRequest.new(response, params, 'The request was invalid or could not be understood by the server. Resubmitting the request will likely result in the same error.')

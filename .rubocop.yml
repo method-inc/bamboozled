@@ -3,7 +3,7 @@
 Rails:
   Enabled: false
 
-Style/AlignHash:
+Layout/AlignHash:
   Enabled: true
   EnforcedHashRocketStyle: table
   EnforcedColonStyle: table
@@ -33,5 +33,5 @@ Style/StringLiterals:
 Style/SymbolArray:
   Enabled: true
 
-RSpec/FilePath:
+Rails/FilePath:
   Enabled: false
