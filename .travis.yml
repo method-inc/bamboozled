@@ -13,7 +13,7 @@ install:
 
 script:
   - bundle exec rspec
-  - PULL_REQUEST_ID=${TRAVIS_PULL_REQUEST} bundle exec pronto run -f github_status github_pr -c origin/master
+  - bundle exec rubocop
 
 matrix:
   fast_finish: true

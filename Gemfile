@@ -13,9 +13,4 @@ group :development, :test do
   gem "rubocop", require: false
   gem "rubocop-rspec", require: false
 
-  gem "pronto"
-  gem "pronto-rubocop", require: false
-  gem "pronto-flay", require: false
-  gem "pronto-reek", require: false
-  gem "pronto-brakeman", require: false
 end
