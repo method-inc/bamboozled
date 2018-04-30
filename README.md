@@ -65,7 +65,8 @@ is allowed to access. Because BambooHR's API doesn't allow for specifying fields
 on the `/employees/directory` API endpoint, passing a list of fields to retrieve
 will be signifigantly slower than getting just the default fields since the gem
 will get the directory of employees, then request the data for each individual
-employee resulting in `employees.count + 1` API calls.
+employee resulting in `employees.count + 1` API calls. To get around this,
+consider using a custom report.
 
 ```ruby
 # Returns an array of all employees
@@ -120,6 +121,15 @@ client.time_off.whos_out(Time.now, "2014-12-31")
 ```
 
 ### Reports
+
+```ruby
+# Get a list of employees with specified fields
+# Send `:all` for `fields` to get all fields.
+# Note that this can get a list of employees with additional fields via a single
+# API request instead of one per employee when using the `employees` endpoint.
+client.report.custom(fields, format = "JSON")
+```
+
 
 ```ruby
 # Find a report by its number
