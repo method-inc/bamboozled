@@ -3,7 +3,7 @@ module Bamboozled
     class FieldCollection
       def self.wrap(fields)
         fields = all_names if fields == :all
-        fields = fields.split(',') if fields.is_a?(String)
+        fields = fields.split(",") if fields.is_a?(String)
         new(fields)
       end
 
@@ -90,7 +90,7 @@ module Bamboozled
       end
 
       def to_csv
-        fields.join(',')
+        fields.join(",")
       end
 
       def to_xml
