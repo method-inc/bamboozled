@@ -95,9 +95,7 @@ module Bamboozled
 
       def to_xml
         "<fields>" +
-          fields.map do |field|
-            "<field id=\"#{field}\" />"
-          end.join +
+          fields.map { |field| "<field id=\"#{field}\" />" }.join +
         "</fields>"
       end
 
