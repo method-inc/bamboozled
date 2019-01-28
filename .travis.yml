@@ -7,12 +7,6 @@ rvm:
   - ruby-head
   - jruby-head
 
-before_install:
-  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
-  - gem install bundler -v '< 2'
-install:
-  - bundle install --retry=3
-
 script:
   - bundle exec rspec
   - bundle exec rubocop
