@@ -10,7 +10,7 @@ group :development, :test do
   gem "guard"
   gem "guard-rspec", require: false
   gem "guard-rubocop", require: false
-  gem "rubocop", require: false
+  gem "rubocop", "~> 0.63.1", require: false
   gem "rubocop-rspec", require: false
 
 end
