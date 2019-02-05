@@ -1,6 +1,6 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["Bundling"]
+  resolves = ["Run Rubocop"]
 }
 
 action "Bundling" {
