@@ -4,6 +4,7 @@ workflow "New workflow" {
 }
 
 action "Install Gems" {
-  uses = "docker://ruby2.2"
+  uses = "Skookum/bamboozled@actions-splybon"
   args = "bundle install"
+  secrets = ["GITHUB_TOKEN"]
 }
