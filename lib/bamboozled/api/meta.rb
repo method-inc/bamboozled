@@ -2,7 +2,7 @@ module Bamboozled
   module API
     class Meta < Base
       def users
-        request(:get, "meta/users").values
+          request(:get, "meta/users").values
       end
 
       def fields
