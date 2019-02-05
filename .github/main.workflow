@@ -4,7 +4,7 @@ workflow "New workflow" {
 }
 
 action "Running Tests" {
-  uses = "Skookum/bamboozled@actions-splybon"
+  uses = "./"
   args = "rspec"
 }
 
