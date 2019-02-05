@@ -1,6 +1,6 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["Run Rubocop"]
+  resolves = ["Bundling"]
 }
 
 action "Bundling" {
@@ -10,6 +10,7 @@ action "Bundling" {
 
 action "Running Tests" {
   uses = "./"
+  needs = ["Bundling"]
   args = "rspec"
 }
 
