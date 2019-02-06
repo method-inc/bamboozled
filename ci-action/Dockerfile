@@ -9,11 +9,7 @@ LABEL "repository"="http://github.com/octocat/hello-world"
 LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="Octocat <octocat@github.com>"
 
-WORKDIR /app
-COPY . /app
-
 RUN gem install bundler
-RUN bundle install --gemfile ./app/Gemfile
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

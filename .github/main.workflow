@@ -1,15 +1,21 @@
 workflow "Main Workflow" {
   on = "push"
-  resolves = ["Testing"]
+  resolves = ["Rspec"]
+}
+
+action "Install" {
+  uses = "./ci-action"
+  args = "install"
 }
 
 action "Rubocop" {
   uses = "./ci-action"
-  args = "rubocop"
+  args = "exec rubocop"
+  needs = "Install"
 }
 
-action "Testing" {
+action "Rspec" {
   uses = "./ci-action"
-  args = "rspec"
+  args = "exec rspec"
   needs = "Rubocop"
 }

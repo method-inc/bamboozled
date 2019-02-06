@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-sh -c "$*"
+sh -c "bundle $*"
