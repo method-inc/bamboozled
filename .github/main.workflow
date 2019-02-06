@@ -10,7 +10,7 @@ action "Installing Bundler" {
 
 action "Bundling" {
   uses = "./"
-  args = "bundle install && rspec"
+  args = "bundle install"
   needs = ["Installing Bundler"]
 }
 
