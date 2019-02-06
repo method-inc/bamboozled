@@ -9,9 +9,9 @@ action "Bundling" {
 }
 
 action "Running Tests" {
-  uses = "docker://ruby:2.5"
+  uses = "./"
   needs = ["Bundling"]
-  args = "rspec"
+  args = "bundle show rspec"
 }
 
 action "Run Rubocop" {
