@@ -9,6 +9,6 @@ action "Rubocop" {
 }
 
 action "Testing" {
-  users = "./actions/ci"
+  uses = "./actions/ci"
   args = "rspec"
 }
