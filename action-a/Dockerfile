@@ -1,13 +1,13 @@
-FROM ruby:2.5
+FROM debian:9.5-slim
 
-LABEL "com.github.actions.name"="Bamboozled CI"
-LABEL "com.github.actions.description"="Tests and lints this gem"
-LABEL "com.github.actions.icon"="package"
-LABEL "com.github.actions.color"="red"
+LABEL "com.github.actions.name"="Hello World"
+LABEL "com.github.actions.description"="Write arguments to the standard output"
+LABEL "com.github.actions.icon"="mic"
+LABEL "com.github.actions.color"="purple"
 
-LABEL "repository"="http://github.com/skookum/bamboozled"
-LABEL "homepage"="http://github.com/skookum/bamboozled"
-LABEL "maintainer"="Skookum"
+LABEL "repository"="http://github.com/octocat/hello-world"
+LABEL "homepage"="http://github.com/actions"
+LABEL "maintainer"="Octocat <octocat@github.com>"
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
