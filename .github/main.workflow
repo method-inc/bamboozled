@@ -4,18 +4,18 @@ workflow "New workflow" {
 }
 
 action "Bundling" {
-  uses = "./"
+  uses = "./action/"
   args = "bundle install"
 }
 
 action "Running Tests" {
-  uses = "./"
+  uses = "./action/"
   needs = ["Bundling"]
   args = "bundle show rspec"
 }
 
 action "Run Rubocop" {
-  uses = "docker://ruby:2.5"
+  uses = "./action/"
   needs = ["Running Tests"]
   args = "rubocop"
 }
