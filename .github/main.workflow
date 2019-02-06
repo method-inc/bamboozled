@@ -4,12 +4,12 @@ workflow "Main Workflow" {
 }
 
 action "Rubocop" {
-  uses = "./Dockerfile"
+  uses = "./"
   args = "rubocop"
 }
 
 action "Rspec" {
-  uses = "./Dockerfile"
+  uses = "./"
   args = "rspec"
   needs = "Rubocop"
 }
