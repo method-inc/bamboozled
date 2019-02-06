@@ -1,9 +1,14 @@
-workflow "CI Workflow" {
+workflow "Main Workflow" {
   on = "push"
-  resolves = ["echoing"]
+  resolves = ["Testing"]
 }
 
-action "echoing" {
-  uses = "./action-a"
-  args = "Hello World"
+action "Rubocop" {
+  uses = "./actions/ci"
+  args = "rubocop"
+}
+
+action "Testing" {
+  users = "./actions/ci"
+  args = "rspec"
 }
