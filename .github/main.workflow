@@ -15,13 +15,13 @@ action "Bundling" {
 }
 
 action "Running Tests" {
-  uses = "./"
+  uses = "docker://ruby:2.5"
   needs = ["Bundling"]
   args = "rspec"
 }
 
 action "Run Rubocop" {
-  uses = "./"
+  uses = "docker://ruby:2.5"
   needs = ["Running Tests"]
   args = "rubocop"
 }
