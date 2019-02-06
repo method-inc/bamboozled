@@ -4,11 +4,12 @@ workflow "Main Workflow" {
 }
 
 action "Rubocop" {
-  uses = "./actions/ci"
+  uses = "./ci-action"
   args = "rubocop"
 }
 
 action "Testing" {
-  uses = "./actions/ci"
+  uses = "./ci-action"
   args = "rspec"
+  needs = "Rubocop"
 }
