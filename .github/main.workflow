@@ -5,7 +5,7 @@ workflow "New workflow" {
 
 action "Bundling" {
   uses = "docker://ruby:2.2"
-  args = "gem install bundler && bundle install"
+  args = "gem install bundler -v 1.17.3 && bundle install"
 }
 
 action "Running Tests" {
