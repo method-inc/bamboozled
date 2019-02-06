@@ -13,7 +13,7 @@ WORKDIR /app
 COPY . /app
 
 RUN gem install bundler
-RUN bundle install --gemfile=../Gemfile
+RUN bundle install --gemfile ../Gemfile
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
