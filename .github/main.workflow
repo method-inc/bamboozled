@@ -3,15 +3,21 @@ workflow "Main Workflow" {
   resolves = ["Rspec"]
 }
 
-action "Install" {
+action "Install 1" {
   uses = "./ci-action"
   args = "install"
+}
+
+action "Install 2" {
+  uses = "./ci-action"
+  args = "install"
+  needs = "Install 1"
 }
 
 action "Rubocop" {
   uses = "./ci-action"
   args = "exec rubocop"
-  needs = "Install"
+  needs = "Install 2"
 }
 
 action "Rspec" {
