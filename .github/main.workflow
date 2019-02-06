@@ -3,15 +3,9 @@ workflow "New workflow" {
   resolves = ["Run Rubocop"]
 }
 
-action "Installing Bundler" {
-  uses = "./"
-  args = "gem install bundler"
-}
-
 action "Bundling" {
   uses = "./"
   args = "bundle install"
-  needs = ["Installing Bundler"]
 }
 
 action "Running Tests" {
