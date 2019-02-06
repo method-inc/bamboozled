@@ -10,7 +10,7 @@ action "Installing Bundler" {
 
 action "Bundling" {
   uses = "docker://ruby:2.5"
-  args = "bundle install"
+  args = "bundle install && rspec"
   needs = ["Installing Bundler"]
 }
 
