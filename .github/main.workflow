@@ -4,7 +4,7 @@ workflow "Main Workflow" {
 }
 
 action "Rubocop" {
-  uses = "./"
+  uses = "Skookum/bamboozled@actions-splybon"
   args = "rubocop"
 }
 
