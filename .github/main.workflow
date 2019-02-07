@@ -4,13 +4,13 @@ workflow "New workflow" {
 }
 
 action "Running Tests" {
-  uses = "Skookum/bamboozled@actions-splybon"
+  uses = "./"
   args = "rspec"
   secrets = ["GITHUB_TOKEN"]
 }
 
 action "Run Rubocop" {
-  uses = "Skookum/bamboozled@actions-splybon"
+  uses = "./"
   needs = ["Running Tests"]
   args = "rubocop"
 }
