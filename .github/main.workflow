@@ -6,7 +6,6 @@ workflow "New workflow" {
 action "Running Tests" {
   uses = "./"
   args = "rspec"
-  secrets = ["GITHUB_TOKEN"]
 }
 
 action "Run Rubocop" {
