@@ -6,12 +6,12 @@ workflow "New workflow" {
 action "Install Gems" {
   uses = "./"
   args = "bundle install"
-  needs = ["Install Gems"]
 }
 
 action "Running Tests" {
   uses = "./"
   args = "rspec"
+  needs = ["Install Gems"]
 }
 
 action "Run Rubocop" {
