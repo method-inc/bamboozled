@@ -1,6 +1,6 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["Running Tests"]
+  resolves = ["Run Rubocop"]
 }
 
 action "Running Tests" {
