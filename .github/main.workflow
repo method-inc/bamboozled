@@ -10,7 +10,7 @@ action "Install Gems" {
 
 action "Running Tests" {
   uses = "./"
-  args = "rspec"
+  args = "bundle exec rspec"
   needs = ["Install Gems"]
 }
 
