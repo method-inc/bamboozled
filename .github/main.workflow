@@ -1,21 +1,20 @@
-workflow "New workflow" {
-  on = "push"
-  resolves = ["Run Rubocop"]
+workflow "Test and Lint" {
+ on = "push"
+ resolves = ["build"]
 }
 
-action "Install Gems" {
-  uses = "./"
-  args = "bundle install --path=$GITHUB_WORKSPACE/bundle"
+action “build” {
+ uses = “actions/docker/cli@master”
+ args = “build -f Dockerfile -t ci-$GITHUB_SHA:latest .”
 }
 
-action "Running Tests" {
-  uses = "./"
-  args = "bundle install --path=$GITHUB_WORKSPACE/bundle"
-  needs = ["Install Gems"]
+action “rubocop” {
+ uses = “actions/docker/cli@master”
+ needs = [“build”]
+ args = “run ci-$GITHUB_SHA:latest rubocop”
 }
-
-action "Run Rubocop" {
-  uses = "./"
-  needs = ["Running Tests"]
-  args = "bundle exec rubocop"
+action “rspec” {
+ uses = “actions/docker/cli@master”
+ needs = [“build”]
+ args = “run ci-$GITHUB_SHA:latest rspec”
 }

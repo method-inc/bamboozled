@@ -1,11 +1,8 @@
 FROM ruby:2.5
 
-LABEL "com.github.actions.name"="Bamboozled Action"
-LABEL "com.github.actions.description"="Assists in actions for bamboozled"
-LABEL "com.github.actions.icon"="mic"
-LABEL "com.github.actions.color"="red"
-
-WORKDIR /app
-COPY . /app
-
-RUN gem install bundler
+ENV APP_HOME /app
+RUN apt-get update -qq && apt-get install -y build-essential
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
+ADD . $APP_HOME/
+RUN bundle install
