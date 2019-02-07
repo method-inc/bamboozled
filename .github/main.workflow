@@ -10,12 +10,12 @@ action "Install Gems" {
 
 action "Running Tests" {
   uses = "./"
-  args = "bundle exec rspec"
+  args = "bundle install"
   needs = ["Install Gems"]
 }
 
 action "Run Rubocop" {
   uses = "./"
   needs = ["Running Tests"]
-  args = "rubocop"
+  args = " bundle exec rubocop"
 }
