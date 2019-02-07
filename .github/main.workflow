@@ -1,6 +1,6 @@
 workflow "Test and Lint" {
  on = "push"
- resolves = ["build"]
+ resolves = ["rspec", "rubocop"]
 }
 
 action "build" {
