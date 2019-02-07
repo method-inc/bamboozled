@@ -5,12 +5,12 @@ workflow "New workflow" {
 
 action "Install Gems" {
   uses = "./"
-  args = "bundle install"
+  args = "bundle install --system"
 }
 
 action "Running Tests" {
   uses = "./"
-  args = "bundle install"
+  args = "bundle install --system"
   needs = ["Install Gems"]
 }
 
