@@ -26,7 +26,7 @@ changes.
 
 ## Documentation
 
-This documentation tracks the latest changes in the `master` branch of the
+This documentation tracks the latest changes in the `master` branch of this
 repo. Some of the features described might not be available in older versions of
 the gem (including the current stable version). Please consult the relevant git
 tag (e.g. v0.0.7) if you need documentation for a specific Bamboozled version.
