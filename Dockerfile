@@ -9,4 +9,3 @@ WORKDIR /app
 COPY . /app
 
 RUN gem install bundler
-RUN bundle install
