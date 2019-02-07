@@ -9,7 +9,7 @@ action "Running Tests" {
   secrets = ["GITHUB_TOKEN"]
 }
 
-action "Running Tests" {
+action "Run Rubocop" {
   uses = "Skookum/bamboozled@actions-splybon"
   needs = ["Running Tests"]
   args = "rubocop"
