@@ -1,6 +1,6 @@
 # Changelog
 
-## master (unreleased)
+## develop (unreleased)
 
 ### New Features
 
