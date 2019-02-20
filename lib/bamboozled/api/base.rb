@@ -6,8 +6,13 @@ module Bamboozled
     class Base
       attr_reader :subdomain, :api_key
 
-      def initialize(subdomain, api_key, httparty_options = {})
-        @subdomain = subdomain
+      def initialize(domain_options, api_key, httparty_options = {})
+        if domain_options.is_a?(Hash)
+          @subdomain = domain_options[:subdomain]
+          @api_domain = domain_options[:api_domain]
+        else
+          @subdomain = domain_options
+        end
         @api_key = api_key
         @httparty_options = httparty_options || {}
       end
@@ -78,7 +83,8 @@ module Bamboozled
         end
 
         def path_prefix
-          "https://api.bamboohr.com/api/gateway.php/#{subdomain}/v1/"
+          api_domain = @api_domain || 'api.bamboohr.com'
+          "https://#{api_domain}/api/gateway.php/#{subdomain}/v1/"
         end
     end
   end
