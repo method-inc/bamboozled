@@ -1,7 +1,7 @@
 require "spec_helper"
 
 RSpec.describe Bamboozled::API::FieldCollection do
-  let(:field_collection) { described_class.new(%w(hireDate location)) }
+  let(:field_collection) { described_class.new(%w[hireDate location]) }
 
   describe "#to_csv" do
     it "returns the fields as a csv" do

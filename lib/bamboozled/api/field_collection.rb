@@ -8,7 +8,7 @@ module Bamboozled
       end
 
       def self.all_names
-        %w(
+        %w[
           address1
           address2
           age
@@ -82,7 +82,7 @@ module Bamboozled
           workPhoneExtension
           workPhonePlusExtension
           zipcode
-        )
+        ]
       end
 
       def initialize(fields)
@@ -96,7 +96,7 @@ module Bamboozled
       def to_xml
         "<fields>" +
           fields.map { |field| "<field id=\"#{field}\" />" }.join +
-        "</fields>"
+          "</fields>"
       end
 
       private

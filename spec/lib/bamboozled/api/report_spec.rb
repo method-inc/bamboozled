@@ -9,7 +9,7 @@ RSpec.describe "Reports" do
     response = File.new("spec/fixtures/custom_report.json")
     stub_request(:any, /.*api\.bamboohr\.com.*/).to_return(response)
 
-    employees = @client.report.custom(%w(bestEmail employeeNumber birthday))
+    employees = @client.report.custom(%w[bestEmail employeeNumber birthday])
 
     expect(employees).to be_an Array
     expect(employees.size).to eq 2
