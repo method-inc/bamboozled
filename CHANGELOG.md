@@ -8,7 +8,7 @@
 
 ### Bug Fixes
 
-## 0.2.0 (2018-02-17)
+## 0.2.0 (2019-03-01)
 
 ### New Features
 
@@ -19,7 +19,6 @@
 ### Changes
 
 * Using github actions for linting and testing
-* Rubocop fixes
 
 ### Bug Fixes
 
