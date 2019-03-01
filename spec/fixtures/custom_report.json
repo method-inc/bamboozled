@@ -1,0 +1,38 @@
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+date: Tue, 17 Jun 2014 19:25:35 UTC
+
+{
+  "employees": [
+    {
+      "bestEmail": "rachel@example.com",
+      "birthday": "05-04",
+      "employeeNumber": "100",
+      "id": "3"
+    },
+    {
+      "bestEmail": "bob@example.com",
+      "birthday": "08-29",
+      "employeeNumber": "101",
+      "id": "4"
+    }
+  ],
+  "fields": [
+    {
+      "id": "bestEmail",
+      "name": "Email",
+      "type": "text"
+    },
+    {
+      "id": "employeeNumber",
+      "name": "Employee #",
+      "type": "employee_number"
+    },
+    {
+      "id": "birthday",
+      "name": "Birthday",
+      "type": "text"
+    }
+  ],
+  "title": "Report"
+}

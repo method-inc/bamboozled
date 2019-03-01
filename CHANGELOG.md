@@ -4,6 +4,8 @@
 
 ### New Features
 
+* New method `Report#custom` allows fetching a custom report of employees. ([@artfuldodger][])
+
 ### Changes
 
 ### Bug Fixes
