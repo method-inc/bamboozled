@@ -7,7 +7,7 @@ below when doing so.
 ## Issue Reporting
 
 * Make sure the issue has not already been reported.
-* Check that the issue has not already been fixed in `master`.
+* Check that the issue has not already been fixed in `develop`.
 * Open a [new issue](https://github.com/Skookum/bamboozled/issues/new) with a
   clear and concise description of the problem.
 * Include any relevant code or error output in the issue summary.
@@ -15,7 +15,7 @@ below when doing so.
 ## Pull Request
 
 * Fork the project.
-* Create a new branch for your feature/bug.
+* Create a new branch for your feature/bug **off of develop**.
 * Get coding!
 * Write good tests. See [Testing](#testing).
 * Follow the same coding conventions as the rest of the project. See [Coding Style](#coding-style).
