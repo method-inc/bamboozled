@@ -4,11 +4,25 @@
 
 ### New Features
 
-* New method `Report#custom` allows fetching a custom report of employees. ([@artfuldodger][])
-
 ### Changes
 
 ### Bug Fixes
+
+## 0.2.0 (2019-03-01)
+
+### New Features
+
+* New method `Report#custom` allows fetching a custom report of employees. ([@artfuldodger][])
+* Make httpparty options configurable ([@ivanovv][])
+* Add time tracking api interface ([@nlively][])
+
+### Changes
+
+* Using github actions for linting and testing
+
+### Bug Fixes
+
+* Fix Metadata API calls. Fixes [Issue #38](https://github.com/Skookum/bamboozled/issues/36) and [Issue #5](https://github.com/Skookum/bamboozled/issues/5)
 
 ## 0.1.0 (2016-06-14)
 
@@ -27,3 +41,8 @@
 [@enriikke]: https://github.com/Enriikke
 [@kylefdoherty]: https://github.com/kylefdoherty
 [@mjording]: https://github.com/mjording
+[@artfuldodger]: https://github.com/artfuldodger
+[@splybon]: https://github.com/splybon
+[@chrisman]: https://github.com/chrisman
+[@ivanovv]: https://github.com/ivanovv
+[@nlively]: https://github.com/nlively
