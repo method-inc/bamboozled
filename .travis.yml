@@ -7,10 +7,6 @@ rvm:
   - ruby-head
   - jruby-head
 
-before_install: gem update --remote bundler && bundle --version
-install:
-  - bundle install --retry=3
-
 script:
   - bundle exec rspec
   - bundle exec rubocop
