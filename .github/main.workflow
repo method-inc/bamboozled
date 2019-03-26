@@ -33,6 +33,6 @@ action "Build the gem" {
 action "Push the gem" {
   uses = "scarhand/actions-ruby@master"
   needs = ["Build the gem"]
-  args = "push *.gem --key $RUBY_GEM_API_KEY"
-  secrets = ["RUBY_GEM_API_KEY"]
+  args = "push *.gem"
+  secrets = ["RUBYGEMS_AUTH_TOKEN"]
 }
