@@ -4,5 +4,5 @@ headers:
   Accept:
   - application/json
   User-Agent:
-  - Bamboozled/0.1.0
+  - Bamboozled/0.2.0
 
