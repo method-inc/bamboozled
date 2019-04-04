@@ -158,6 +158,11 @@ Please take the time to go through our [contribution guidelines](CONTRIBUTING.md
 Special thanks to all the awesome people who have helped make this gem better.
 You can see a list of them [here](https://github.com/Skookum/bamboozled/graphs/contributors).
 
+#### Deploying to rubygems
+1. Update the version in the `lib/bamboozled/version.rb` file
+2. Update specs to use that version
+3. In github, add a [release](https://github.com/Skookum/bamboozled/releases) off the master branch.  This will trigger the github action to deploy to rubygems
+
 ## License
 
 This project is licensed under the terms of the MIT license. See the
