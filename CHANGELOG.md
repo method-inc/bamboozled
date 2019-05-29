@@ -4,6 +4,8 @@
 
 ### New Features
 
+* [#62](https://github.com/Skookum/bamboozled/issues/62): Add applicant tracking API interface ([@danhealy][])
+
 ### Changes
 
 ### Bug Fixes
@@ -46,3 +48,4 @@
 [@chrisman]: https://github.com/chrisman
 [@ivanovv]: https://github.com/ivanovv
 [@nlively]: https://github.com/nlively
+[@danhealy]: https://github.com/danhealy

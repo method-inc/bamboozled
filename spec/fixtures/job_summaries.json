@@ -1,0 +1,131 @@
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+date: Tue, 28 May 2019 19:25:35 UTC
+
+[
+    {
+        "postedDate": "2019-01-27T16:21:08+00:00",
+        "location": {
+            "id": 18240,
+            "label": "Sydney, New South Wales",
+            "address": null
+        },
+        "department": {
+            "id": 18264,
+            "label": "Product"
+        },
+        "status": {
+            "id": 1,
+            "label": "Open"
+        },
+        "newApplicantsCount": 1,
+        "activeApplicantsCount": 5,
+        "totalApplicantsCount": 6,
+        "postingUrl": "https://x.bamboohr.com/jobs/view.php?id=20",
+        "id": 20,
+        "title": {
+            "id": null,
+            "label": "Software Engineer"
+        }
+    },
+    {
+        "postedDate": "2019-05-28T17:10:57+00:00",
+        "location": {
+            "id": 18235,
+            "label": "Lindon, Utah",
+            "address": null
+        },
+        "department": {
+            "id": 18234,
+            "label": "Human Resources"
+        },
+        "status": {
+            "id": 2,
+            "label": "Draft"
+        },
+        "newApplicantsCount": 0,
+        "activeApplicantsCount": 0,
+        "totalApplicantsCount": 0,
+        "postingUrl": "https://x.bamboohr.com/jobs/view.php?id=19",
+        "id": 19,
+        "title": {
+            "id": null,
+            "label": "General Application"
+        }
+    },
+    {
+        "postedDate": "2019-05-28T17:10:57+00:00",
+        "location": {
+            "id": 18235,
+            "label": "Lindon, Utah",
+            "address": null
+        },
+        "department": {
+            "id": 18256,
+            "label": "Marketing"
+        },
+        "status": {
+            "id": 2,
+            "label": "Draft"
+        },
+        "newApplicantsCount": 0,
+        "activeApplicantsCount": 0,
+        "totalApplicantsCount": 0,
+        "postingUrl": "https://x.bamboohr.com/jobs/view.php?id=18",
+        "id": 18,
+        "title": {
+            "id": null,
+            "label": "Videographer"
+        }
+    },
+    {
+        "postedDate": "2019-01-25T21:31:31+00:00",
+        "location": {
+            "id": 18243,
+            "label": "Vancouver, British Columbia",
+            "address": null
+        },
+        "department": {
+            "id": 18249,
+            "label": "Sales"
+        },
+        "status": {
+            "id": 1,
+            "label": "Open"
+        },
+        "newApplicantsCount": 3,
+        "activeApplicantsCount": 4,
+        "totalApplicantsCount": 4,
+        "postingUrl": "https://x.bamboohr.com/jobs/view.php?id=17",
+        "id": 17,
+        "title": {
+            "id": null,
+            "label": "Account Executive"
+        }
+    },
+    {
+        "postedDate": "2019-01-25T21:28:37+00:00",
+        "location": {
+            "id": 18238,
+            "label": "Mayfaird, London, City of",
+            "address": null
+        },
+        "department": {
+            "id": 18251,
+            "label": "IT"
+        },
+        "status": {
+            "id": 1,
+            "label": "Open"
+        },
+        "newApplicantsCount": 0,
+        "activeApplicantsCount": 4,
+        "totalApplicantsCount": 4,
+        "postingUrl": "https://x.bamboohr.com/jobs/view.php?id=15",
+        "id": 15,
+        "title": {
+            "id": null,
+            "label": "IT Security Engineer"
+        }
+    }
+]

@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+date: Tue, 28 May 2019 19:25:35 UTC
+
+{
+    "type": "positionApplicantStatus",
+    "id": 254
+}

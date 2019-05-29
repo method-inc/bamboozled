@@ -1,0 +1,106 @@
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+date: Tue, 28 May 2019 19:25:35 UTC
+
+{
+    "id": 33,
+    "appliedDate": "2019-02-05T21:03:16+00:00",
+    "status": {
+        "id": 5,
+        "label": "Schedule Interview",
+        "dateChanged": "2019-02-11T19:25:03+00:00",
+        "changedByUser": {
+            "id": 2388,
+            "firstName": "Ashley",
+            "lastName": "Adams",
+            "avatar": "https://d5a0f4a55e0f8389d6c9-937e97f4c2c35ce54def04e9eaa5f869.ssl.cf1.rackcdn.com/photos/5-0-3.jpg",
+            "jobTitle": {
+                "id": 18236,
+                "label": "HR Administrator"
+            }
+        }
+    },
+    "rating": 5,
+    "resumeFileId": 177,
+    "coverLetterFileId": null,
+    "movedTo": null,
+    "movedFrom": null,
+    "alsoConsideredForCount": 0,
+    "duplicateApplicationCount": 0,
+    "referredBy": null,
+    "desiredSalary": "₤85,000",
+    "commentCount": 2,
+    "emailCount": 3,
+    "eventCount": 4,
+    "questionsAndAnswers": [
+        {
+            "question": {
+                "id": 36,
+                "label": "References (Name, Company, and Contact Info)"
+            },
+            "answer": {
+                "id": 146,
+                "label": "Paul Clayton\r\nDirector of Digital Security\r\nSoftware Company\r\nDirectorofsecurity@efficientoffice.com\r\n+44 20 5555 0920\r\n\r\nJanet Allen\r\nSystems Administrator\r\nABC Corporation\r\nsecuritymanager@efficientoffice.com\r\n+44 20 5555 1233 "
+            }
+        },
+        {
+            "question": {
+                "id": 37,
+                "label": "How did you hear about this position?"
+            },
+            "answer": {
+                "id": 147,
+                "label": "My friend told me to apply to this position."
+            }
+        },
+        {
+            "question": {
+                "id": 41,
+                "label": "Who referred you to this position?"
+            },
+            "answer": {
+                "id": 148,
+                "label": "Ashley Adams"
+            }
+        }
+    ],
+    "applicationReferences": null,
+    "applicant": {
+        "email": "nathan@efficientoffice.com",
+        "phoneNumber": "+44 20 5555 2023",
+        "address": {
+            "addressLine1": "33 Bothwell St",
+            "addressLine2": null,
+            "city": null,
+            "state": "Glasgow City",
+            "zipcode": "G2 6AU",
+            "country": "United Kingdom"
+        },
+        "linkedinUrl": "http://www.linkedin.com",
+        "twitterUsername": null,
+        "websiteUrl": "http://www.blogger.com",
+        "availableStartDate": "2019-02-15",
+        "education": null,
+        "id": 95,
+        "firstName": "Nathan",
+        "lastName": "Rose",
+        "avatar": null
+    },
+    "job": {
+        "hiringLead": {
+            "employeeId": 12,
+            "firstName": "Eric",
+            "lastName": "Pasture",
+            "avatar": "https://d5a0f4a55e0f8389d6c9-937e97f4c2c35ce54def04e9eaa5f869.ssl.cf1.rackcdn.com/photos/12-0-4.jpg",
+            "jobTitle": {
+                "id": 18318,
+                "label": "VP of IT"
+            }
+        },
+        "id": 15,
+        "title": {
+            "id": null,
+            "label": "IT Security Engineer"
+        }
+    }
+}

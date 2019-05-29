@@ -136,6 +136,31 @@ client.report.custom(fields, format = "JSON")
 client.report.find(report_number, format = "JSON", fd = true)
 ```
 
+### Applicant Tracking System
+The ATS API is currently in **beta**. Please note that BambooHR may make breaking changes without
+warning. Refer to the [documentation](https://www.bamboohr.com/api/documentation/ats.php) for
+details.
+
+```ruby
+# Get a list of job summaries
+client.applicant_tracking.job_summaries
+
+# Get a list of applications, following pagination
+client.applicant_tracking.applications(page_limit: 10)
+
+# Get the details of an application
+client.applicant_tracking.application(123)
+
+# Add comments to an application
+client.applicant_tracking.add_comment(123, "Great Application!")
+
+# Get a list of statuses for a company
+client.applicant_tracking.statuses
+
+# Change applicant's status
+client.applicant_tracking.change_status(123, 3)
+```
+
 ### Metadata
 
 ```ruby
