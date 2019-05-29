@@ -1,0 +1,309 @@
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+date: Tue, 28 May 2019 19:25:35 UTC
+
+{
+    "paginationComplete": true,
+    "applications": [
+        {
+            "id": 33,
+            "appliedDate": "2019-02-05T21:03:16+00:00",
+            "status": {
+                "id": 5,
+                "label": "Schedule Interview"
+            },
+            "rating": 5,
+            "applicant": {
+                "id": 95,
+                "firstName": "Nathan",
+                "lastName": "Rose",
+                "avatar": "https://resources.bamboohr.com/employees/photos/initials.php?initials=NR",
+                "email": "nathan@efficientoffice.com"
+            },
+            "job": {
+                "id": 15,
+                "title": {
+                    "id": null,
+                    "label": "IT Security Engineer"
+                }
+            }
+        },
+        {
+            "id": 32,
+            "appliedDate": "2019-02-05T21:00:30+00:00",
+            "status": {
+                "id": 4,
+                "label": "Phone Screened"
+            },
+            "rating": null,
+            "applicant": {
+                "id": 94,
+                "firstName": "Jodi",
+                "lastName": "Edwards",
+                "avatar": "https://resources.bamboohr.com/employees/photos/initials.php?initials=JE",
+                "email": "jodi@efficientoffice.com"
+            },
+            "job": {
+                "id": 15,
+                "title": {
+                    "id": null,
+                    "label": "IT Security Engineer"
+                }
+            }
+        },
+        {
+            "id": 31,
+            "appliedDate": "2019-02-05T20:57:10+00:00",
+            "status": {
+                "id": 2,
+                "label": "Reviewed"
+            },
+            "rating": 5,
+            "applicant": {
+                "id": 93,
+                "firstName": "Jacob",
+                "lastName": "Parks",
+                "avatar": "https://resources.bamboohr.com/employees/photos/initials.php?initials=JP",
+                "email": "jacob@efficientoffice.com"
+            },
+            "job": {
+                "id": 15,
+                "title": {
+                    "id": null,
+                    "label": "IT Security Engineer"
+                }
+            }
+        },
+        {
+            "id": 30,
+            "appliedDate": "2019-02-05T20:53:05+00:00",
+            "status": {
+                "id": 2,
+                "label": "Reviewed"
+            },
+            "rating": 4,
+            "applicant": {
+                "id": 92,
+                "firstName": "Fred",
+                "lastName": "Hunt",
+                "avatar": "https://resources.bamboohr.com/employees/photos/initials.php?initials=FH",
+                "email": "fred@efficientoffice.com"
+            },
+            "job": {
+                "id": 15,
+                "title": {
+                    "id": null,
+                    "label": "IT Security Engineer"
+                }
+            }
+        },
+        {
+            "id": 29,
+            "appliedDate": "2019-01-27T17:00:05+00:00",
+            "status": {
+                "id": 16,
+                "label": "Offer Sent"
+            },
+            "rating": 5,
+            "applicant": {
+                "id": 91,
+                "firstName": "Cora",
+                "lastName": "Parsons",
+                "avatar": "https://resources.bamboohr.com/employees/photos/initials.php?initials=CP",
+                "email": "cora@efficientoffice.com"
+            },
+            "job": {
+                "id": 17,
+                "title": {
+                    "id": null,
+                    "label": "Account Executive"
+                }
+            }
+        },
+        {
+            "id": 28,
+            "appliedDate": "2019-01-27T16:58:25+00:00",
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "rating": null,
+            "applicant": {
+                "id": 90,
+                "firstName": "Craig",
+                "lastName": "Douglas",
+                "avatar": "https://resources.bamboohr.com/employees/photos/initials.php?initials=CD",
+                "email": "craig@efficientoffice.com"
+            },
+            "job": {
+                "id": 17,
+                "title": {
+                    "id": null,
+                    "label": "Account Executive"
+                }
+            }
+        },
+        {
+            "id": 27,
+            "appliedDate": "2019-01-27T16:56:49+00:00",
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "rating": null,
+            "applicant": {
+                "id": 89,
+                "firstName": "Lloyd",
+                "lastName": "Cruz",
+                "avatar": "https://resources.bamboohr.com/employees/photos/initials.php?initials=LC",
+                "email": "lloyd@efficientoffice.com"
+            },
+            "job": {
+                "id": 17,
+                "title": {
+                    "id": null,
+                    "label": "Account Executive"
+                }
+            }
+        },
+        {
+            "id": 26,
+            "appliedDate": "2019-01-27T16:55:04+00:00",
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "rating": null,
+            "applicant": {
+                "id": 88,
+                "firstName": "Jamie",
+                "lastName": "Graves",
+                "avatar": "https://resources.bamboohr.com/employees/photos/initials.php?initials=JG",
+                "email": "jamie@efficientoffice.com"
+            },
+            "job": {
+                "id": 17,
+                "title": {
+                    "id": null,
+                    "label": "Account Executive"
+                }
+            }
+        },
+        {
+            "id": 25,
+            "appliedDate": "2019-01-27T16:49:36+00:00",
+            "status": {
+                "id": 16,
+                "label": "Offer Sent"
+            },
+            "rating": 4,
+            "applicant": {
+                "id": 87,
+                "firstName": "Katrina",
+                "lastName": "Cox",
+                "avatar": "https://resources.bamboohr.com/employees/photos/initials.php?initials=KC",
+                "email": "katrina@efficientoffice.com"
+            },
+            "job": {
+                "id": 20,
+                "title": {
+                    "id": null,
+                    "label": "Software Engineer"
+                }
+            }
+        },
+        {
+            "id": 23,
+            "appliedDate": "2019-01-27T16:45:46+00:00",
+            "status": {
+                "id": 1,
+                "label": "New"
+            },
+            "rating": 5,
+            "applicant": {
+                "id": 85,
+                "firstName": "Gene",
+                "lastName": "Owen",
+                "avatar": "https://resources.bamboohr.com/employees/photos/initials.php?initials=GO",
+                "email": "gene@efficientoffice.com"
+            },
+            "job": {
+                "id": 20,
+                "title": {
+                    "id": null,
+                    "label": "Software Engineer"
+                }
+            }
+        },
+        {
+            "id": 22,
+            "appliedDate": "2019-01-27T16:41:33+00:00",
+            "status": {
+                "id": 7,
+                "label": "Put on Hold"
+            },
+            "rating": 2,
+            "applicant": {
+                "id": 84,
+                "firstName": "Frank",
+                "lastName": "Baldwin",
+                "avatar": "https://resources.bamboohr.com/employees/photos/initials.php?initials=FB",
+                "email": "frank@efficientoffice.com"
+            },
+            "job": {
+                "id": 20,
+                "title": {
+                    "id": null,
+                    "label": "Software Engineer"
+                }
+            }
+        },
+        {
+            "id": 21,
+            "appliedDate": "2019-01-27T16:39:10+00:00",
+            "status": {
+                "id": 8,
+                "label": "Checking References"
+            },
+            "rating": 5,
+            "applicant": {
+                "id": 83,
+                "firstName": "Janice",
+                "lastName": "Hall",
+                "avatar": "https://resources.bamboohr.com/employees/photos/initials.php?initials=JH",
+                "email": "Janice@efficientoffice.com"
+            },
+            "job": {
+                "id": 20,
+                "title": {
+                    "id": null,
+                    "label": "Software Engineer"
+                }
+            }
+        },
+        {
+            "id": 20,
+            "appliedDate": "2019-01-27T16:37:35+00:00",
+            "status": {
+                "id": 3,
+                "label": "Schedule Phone Screen"
+            },
+            "rating": 4,
+            "applicant": {
+                "id": 82,
+                "firstName": "Kimberly",
+                "lastName": "Hughes",
+                "avatar": "https://resources.bamboohr.com/employees/photos/initials.php?initials=KH",
+                "email": "kimberly@efficientoffice.com"
+            },
+            "job": {
+                "id": 20,
+                "title": {
+                    "id": null,
+                    "label": "Software Engineer"
+                }
+            }
+        }
+    ],
+    "nextPageUrl": null
+}

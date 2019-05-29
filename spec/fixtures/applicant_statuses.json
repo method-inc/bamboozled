@@ -1,0 +1,177 @@
+HTTP/1.1 200 OK
+content-type: application/json; charset=utf-8
+date: Tue, 28 May 2019 19:25:35 UTC
+
+[
+    {
+        "code": "NEW",
+        "description": null,
+        "enabled": true,
+        "id": "1",
+        "manageable": false,
+        "name": "New",
+        "translatedName": "New"
+    },
+    {
+        "code": "REVIEWED",
+        "description": null,
+        "enabled": true,
+        "id": "2",
+        "manageable": false,
+        "name": "Reviewed",
+        "translatedName": "Reviewed"
+    },
+    {
+        "code": "SCHEDPHONE",
+        "description": null,
+        "enabled": true,
+        "id": "3",
+        "manageable": false,
+        "name": "Schedule Phone Screen",
+        "translatedName": "Schedule Phone Screen"
+    },
+    {
+        "code": "PHONED",
+        "description": null,
+        "enabled": true,
+        "id": "4",
+        "manageable": false,
+        "name": "Phone Screened",
+        "translatedName": "Phone Screened"
+    },
+    {
+        "code": "SCHEDINT",
+        "description": null,
+        "enabled": true,
+        "id": "5",
+        "manageable": false,
+        "name": "Schedule Interview",
+        "translatedName": "Schedule Interview"
+    },
+    {
+        "code": "INTERVIEW",
+        "description": null,
+        "enabled": true,
+        "id": "6",
+        "manageable": false,
+        "name": "Interviewed",
+        "translatedName": "Interviewed"
+    },
+    {
+        "code": "ONHOLD",
+        "description": null,
+        "enabled": true,
+        "id": "7",
+        "manageable": false,
+        "name": "Put on Hold",
+        "translatedName": "Put on Hold"
+    },
+    {
+        "code": "REFCHECK",
+        "description": null,
+        "enabled": true,
+        "id": "8",
+        "manageable": false,
+        "name": "Checking References",
+        "translatedName": "Checking References"
+    },
+    {
+        "code": "OFFER",
+        "description": null,
+        "enabled": false,
+        "id": "9",
+        "manageable": false,
+        "name": "Made an Offer",
+        "translatedName": "Made an Offer"
+    },
+    {
+        "code": "NOFIT",
+        "description": null,
+        "enabled": true,
+        "id": "10",
+        "manageable": false,
+        "name": "Not a Fit",
+        "translatedName": "Not a Fit"
+    },
+    {
+        "code": "DECLINED",
+        "description": null,
+        "enabled": true,
+        "id": "11",
+        "manageable": false,
+        "name": "Declined Offer",
+        "translatedName": "Declined Offer"
+    },
+    {
+        "code": "NOQUAL",
+        "description": null,
+        "enabled": true,
+        "id": "12",
+        "manageable": false,
+        "name": "Not Qualified",
+        "translatedName": "Not Qualified"
+    },
+    {
+        "code": "OVERQUAL",
+        "description": null,
+        "enabled": true,
+        "id": "13",
+        "manageable": false,
+        "name": "Over Qualified",
+        "translatedName": "Over Qualified"
+    },
+    {
+        "code": "POACHED",
+        "description": null,
+        "enabled": true,
+        "id": "14",
+        "manageable": false,
+        "name": "Hired Elsewhere",
+        "translatedName": "Hired Elsewhere"
+    },
+    {
+        "code": "HIRED",
+        "description": null,
+        "enabled": true,
+        "id": "15",
+        "manageable": false,
+        "name": "Hired",
+        "translatedName": "Hired"
+    },
+    {
+        "code": "OLSENT",
+        "description": null,
+        "enabled": true,
+        "id": "16",
+        "manageable": false,
+        "name": "Offer Sent",
+        "translatedName": "Offer Sent"
+    },
+    {
+        "code": "OLSIGNED",
+        "description": null,
+        "enabled": true,
+        "id": "17",
+        "manageable": false,
+        "name": "Offer Signed",
+        "translatedName": "Offer Signed"
+    },
+    {
+        "code": "DELETED",
+        "description": null,
+        "enabled": false,
+        "id": "18",
+        "manageable": false,
+        "name": "Deleted",
+        "translatedName": "Deleted"
+    },
+    {
+        "code": "MOVED",
+        "description": null,
+        "enabled": false,
+        "id": "19",
+        "manageable": false,
+        "name": "Moved",
+        "translatedName": "Moved"
+    }
+]
