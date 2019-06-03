@@ -37,10 +37,11 @@ module Bamboozled
         case response.code
         when 200..201
           begin
-            if response.body.to_s.empty?
+            body = response.body.to_s
+            if body.empty?
               { "headers" => response.headers }
             else
-              JSON.parse(response)
+              JSON.parse(body)
             end
           rescue
             typecast = options.fetch(:typecast_values, true)
