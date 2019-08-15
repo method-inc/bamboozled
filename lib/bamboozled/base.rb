@@ -27,5 +27,9 @@ module Bamboozled
     def time_tracking
       @time_tracking ||= Bamboozled::API::TimeTracking.new(@subdomain, @api_key, @httparty_options)
     end
+
+    def applicant_tracking
+      @applicant_tracking ||= Bamboozled::API::ApplicantTracking.new(@subdomain, @api_key, @httparty_options)
+    end
   end
 end
