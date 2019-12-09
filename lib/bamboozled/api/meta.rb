@@ -16,7 +16,7 @@ module Bamboozled
       def tables
         request(
           :get, "meta/tables",
-          typecast_values: false)[:tables]
+          typecast_values: false)
       end
 
     end

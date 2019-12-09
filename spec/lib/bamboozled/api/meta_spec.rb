@@ -42,6 +42,6 @@ RSpec.describe "Meta" do
     make_stub(res)
 
     fields = @client.meta.lists
-    expect(fields).to be_a Hash
+    expect(fields).to be_a Array
   end
 end
