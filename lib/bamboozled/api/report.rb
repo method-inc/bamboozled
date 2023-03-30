@@ -6,30 +6,39 @@ module Bamboozled
         request(:get, "reports/#{number}?format=#{format.upcase}&fd=#{fd_param.yesno}")
       end
 
-      def custom(fields, include_null = true ,date = nil,  format='JSON' )
-        url = URI("#{path_prefix}reports/custom?format=#{format.upcase}")
-        puts url
-        http = Net::HTTP.new(url.host, url.port)
-        http.use_ssl = true
-        request = Net::HTTP::Post.new(url)
-        request["content-type"] = 'application/json'
-        request.basic_auth auth[:username], auth[:password]
-        request.body = body(fields, include_null, date).to_json
-        response = http.request(request)
-        response.read_body
+      def custom(fields, hide_null = false, date = nil, format = "JSON")
+        options = {
+          body: "<report>#{filters_xml(hide_null, date)}#{fields_xml(fields)}</report>"
+        }
+
+        response = request(:post, "reports/custom?format=#{format.upcase}", options)
+        response["employees"]
+
       end
 
       private
 
-      def body(fields, include_null, date)
-        body = {}
-        body[:fields] = fields || FieldCollection.all_names
-        last_changed_object = {}
-        last_changed_object[:includeNull] = include_null.to_s
-        last_changed_object[:value] = date
+      def filters_xml(hide_null, date)
+        filters = null_filter(hide_null) + date_filter(date)
+        return if filters.empty?
 
-        body[:filters] = { lastChanged: last_changed_object }
-        body
+        "<filters><lastChanged>#{filters}</lastChanged></filters>"
+      end
+
+      def null_filter(hide_null)
+        return '' unless hide_null == true
+
+        '<includeNull>no</includeNull>'
+      end
+
+      def date_filter(date)
+        return '' if date.nil?
+
+        "<value>#{date.to_iso8601}</value>"
+      end
+
+      def fields_xml(fields)
+        FieldCollection.wrap(fields).to_xml
       end
     end
   end
